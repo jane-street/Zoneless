@@ -58,15 +58,15 @@ export interface Price {
   currency_options?: {
     [key: string]: {
       /** When set, provides configuration for the amount to be adjusted by the customer during Checkout Sessions and Payment Links. */
-      custom_unit_amount: PriceCustomUnitAmount | null;
+      custom_unit_amount?: PriceCustomUnitAmount | null;
       /** Only required if a default tax behavior was not provided in the Stripe Tax settings. Specifies whether the price is considered inclusive of taxes or exclusive of taxes. One of inclusive, exclusive, or unspecified. Once specified as either inclusive or exclusive, it cannot be changed. */
-      tax_behavior: PriceTaxBehaviour;
+      tax_behavior?: PriceTaxBehaviour;
       /** Each element represents a pricing tier. This parameter requires billing_scheme to be set to tiered. See also the documentation for billing_scheme. */
-      tiers: PriceTier[] | null;
+      tiers?: PriceTier[] | null;
       /** The unit amount in the smallest currency unit to be charged, represented as a whole integer if possible. Only set if billing_scheme=per_unit. */
-      unit_amount: number | null;
+      unit_amount?: number | null;
       /** The unit amount in the smallest currency unit to be charged, represented as a decimal string with at most 12 decimal places. Only set if billing_scheme=per_unit. */
-      unit_amount_decimal: string | null;
+      unit_amount_decimal?: string | null;
     };
   } | null;
   /** When set, provides configuration for the amount to be adjusted by the customer during Checkout Sessions and Payment Links. */
@@ -104,11 +104,11 @@ export interface PriceTier {
   /** Price for the entire tier. */
   flat_amount: number | null;
   /** Same as flat_amount, but contains a decimal value with at most 12 decimal places. */
-  flat_amount_decimal: string | null;
+  flat_amount_decimal?: string | null;
   /** Per unit price for units relevant to the tier. */
-  unit_amount: number | null;
+  unit_amount?: number | null;
   /** Same as unit_amount, but contains a decimal value with at most 12 decimal places. */
-  unit_amount_decimal: string | null;
+  unit_amount_decimal?: string | null;
   /** Up to and including to this quantity will be contained in the tier. */
   up_to: number;
 }
