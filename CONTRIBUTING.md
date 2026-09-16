@@ -1,94 +1,136 @@
 # Contributing to Zoneless
 
-Thank you for considering contributing to Zoneless! This guide covers everything you need to get started.
+Thanks for wanting to help. Zoneless is an open-source payments platform you can self-host on your own infrastructure. Imagine an open-source Stripe that you own.
 
-## Code of Conduct
+The goal is to stay open source through the whole stack: the payment rail, the blockchain, the stablecoins, and the software that sits on top.
+
+We only take on external dependencies where something cannot reasonably be open sourced today. Card networks are the usual example: accepting a Visa or Mastercard payment is not something we can currently do with an open stack, so that kind of integration stays optional and at the edges.
+
+If you have a question, [join the Discord](https://discord.gg/mdMQJug9mG) or open a [GitHub issue](https://github.com/zonelessdev/zoneless/issues). Product docs, API reference, and self-hosting live at [zoneless.com/docs](https://zoneless.com/docs).
 
 This project is governed by our [Code of Conduct](CODE_OF_CONDUCT.md). By participating, you are expected to uphold it.
 
-## Getting Started
+## Looking for something to work on?
 
-1. Fork the repository
-2. Clone your fork: `git clone https://github.com/YOUR_USERNAME/zoneless.git`
-3. Add the upstream remote: `git remote add upstream https://github.com/zonelessdev/zoneless.git`
-4. Create a branch: `git checkout -b feature/your-feature-name`
+Browse [good first issue](https://github.com/zonelessdev/zoneless/issues?q=is%3Aissue+is%3Aopen+label%3A%22good+first+issue%22) for small, well-scoped tasks or [help wanted](https://github.com/zonelessdev/zoneless/issues?q=is%3Aissue+is%3Aopen+label%3A%22help+wanted%22) for larger contributions.
 
-### Development Setup
+If you want to work on an issue, leave a comment before starting so we can avoid duplicate work.
+
+For larger changes, open an issue first and agree on the approach before writing code.
+
+Then:
+
+1. Set up the repo locally (below).
+2. Make a small, focused change with tests.
+3. Open a pull request.
+
+Please do not open one huge pull request of untested, AI-generated code. Small, scoped PRs with a clear goal are much easier to review and much more likely to land.
+
+## Design thesis
+
+The API should match Stripe.
+
+If you are unsure how a resource, field, webhook, or object should look, check the [Stripe docs](https://docs.stripe.com/api) and follow that structure: field names, object shapes, emitted events, and behaviour. Zoneless uses USDC on Solana instead of cards and bank accounts, but the programming model should feel like Stripe. See the [API reference](https://zoneless.com/docs) and [migrating from Stripe](https://zoneless.com/docs/migrate-from-stripe) for how that mapping works in this project.
+
+## Other ways to contribute
+
+You do not need to write code to help. Useful contributions include bug reports, docs fixes, and reproductions.
+
+- **Bugs.** Search [existing issues](https://github.com/zonelessdev/zoneless/issues) first. Include steps to reproduce, expected vs actual behaviour, and environment details (OS, Node version, browser).
+- **Features.** Feature requests live in the [issues tab](https://github.com/zonelessdev/zoneless/issues). Open one before building something large.
+- **Questions and design discussion.** Use [Discord](https://discord.gg/mdMQJug9mG). Issues are better for work that should be tracked and reviewed.
+
+## Development setup
+
+You need Node.js 20 (see `.nvmrc`), npm, and Docker (for MongoDB).
 
 ```bash
+git clone https://github.com/YOUR_USERNAME/zoneless.git
+cd zoneless
+git remote add upstream https://github.com/zonelessdev/zoneless.git
 npm install
 docker compose up -d        # MongoDB
-npx nx serve api            # API
-npx nx serve web            # Dashboard (separate terminal)
+npx nx serve api            # API on :3333
+npx nx serve web            # Dashboard on :4203
 ```
 
-### Running Tests & Linting
+Or run the API and dashboard together:
+
+```bash
+npm run dev
+```
+
+To run the full Docker stack instead (API, dashboard, and database behind one local URL), follow the [self-hosting](https://zoneless.com/docs/self-hosting) and [local development](https://zoneless.com/docs/local-development) guides.
+
+Test mode uses simulated funds by default (`SETTLEMENT_RAIL=simulated`). To exercise Solana Devnet, set `LIVEMODE=false` and `SETTLEMENT_RAIL=onchain`.
+
+### Tests, lint, and formatting
 
 ```bash
 npx nx test api
 npx nx test web
 npx nx lint api --fix
 npx nx lint web --fix
+npm run format
 ```
 
-Test mode uses simulated funds by default (`SETTLEMENT_RAIL=simulated`). To
-exercise Solana Devnet instead, set `LIVEMODE=false` and `SETTLEMENT_RAIL=onchain`.
+CI also runs `npm run format:check` and `npx nx run-many --target=test --all`. Run those locally before you open a PR.
 
-## How to Contribute
+## Pull requests
 
-### Reporting Bugs
+1. Branch from `main`. Name the branch whatever describes the change (`fix-payout-status`, `account-link-return-url`, and so on). A `feature/` prefix is not required.
+2. Keep the change small and focused on one goal.
+3. Add tests for the behaviour you changed.
+4. Follow the existing structure, naming, and formatting. Reuse styles from the styles folder rather than introducing new ones. Remove code that your change makes unused.
+5. Use comments only where the code cannot say it clearly.
+6. Fill out the PR template so reviewers know what changed and how you tested it.
 
-Search [existing issues](https://github.com/zonelessdev/zoneless/issues) first. When filing a new one, include:
+### PR checklist
 
-- Steps to reproduce
-- Expected vs. actual behavior
-- Environment details (OS, Node version, browser)
+- [ ] Tests pass (`npx nx run-many --target=test --all`)
+- [ ] Linting passes (`npx nx run-many --target=lint --all`)
+- [ ] Formatting passes (`npm run format:check`)
+- [ ] No merge conflicts with `main`
 
-### Suggesting Features
+By contributing, you agree that your contributions are licensed under the [Apache License 2.0](./LICENSE).
 
-Open a GitHub issue with a clear description of the proposed functionality and why it would be useful.
+## Style
 
-### First Contributions
-
-Look for issues labeled `good first issue` or `help wanted`.
-
-## Style Guidelines
-
-- **TypeScript** for all new code
-- **PascalCase** for function names: `GetAccount()`, `ValidateUser()`
-- **camelCase** for variables: `accountId`, `userName`
+- TypeScript for all new code
+- PascalCase for function names: `GetAccount()`, `ValidateUser()`
+- camelCase for variables: `accountId`, `userName`
 - Prefer `const` over `let`, avoid `var`
 - Use `async`/`await` over raw promises
 - Standalone Angular components with signals for state
 - Zod for API request validation
+- Do not add a new dependency unless the work cannot be done with what is already in the repo
 
-## Commit Messages
+## Commit messages
 
 We follow [Conventional Commits](https://www.conventionalcommits.org/):
 
 ```
-<type>(<scope>): <subject>
+<type>: <subject>
 ```
+
+A scope is optional. Use one when it helps (`feat: add payout failure webhook`), not as a required `(api)` / `(web)` prefix.
 
 Types: `feat`, `fix`, `docs`, `style`, `refactor`, `perf`, `test`, `chore`
 
 Examples:
 
 ```
-feat(api): add webhook endpoint support
-fix(web): resolve wallet validation on paste
-refactor(web): reorganize component structure
+feat: emit payout.failed webhook on on-chain error
+fix: validate wallet address on paste
+docs: clarify test-mode settlement defaults
 ```
 
-## Pull Request Process
+## Working with coding agents
 
-1. Ensure tests and linting pass
-2. Update documentation if changing functionality
-3. Fill out the PR template
-4. Wait for review — maintainers may request changes
+If you use Cursor, Claude Code, or a similar agent, this repo has an [AGENTS.md](./AGENTS.md). Coding tools pick that file up automatically.
 
-### PR Checklist
+The agent still needs a small, reviewable change with tests. A large generated diff is not a shortcut around the pull request process.
 
-- [ ] Tests pass (`npx nx run-many --target=test --all`)
-- [ ] Linting passes (`npx nx run-many --target=lint --all`)
-- [ ] No merge conflicts with `main`
+## Security
+
+Do not report vulnerabilities in public issues. See [SECURITY.md](./SECURITY.md).
