@@ -227,8 +227,8 @@ export class PriceModule {
     // Get previous state for the event (before update)
     const previousPrice = this.eventService ? await this.GetPrice(id) : null;
 
-    await this.db.Update<PriceType>('Prices', id, validatedUpdate); 
-    
+    await this.db.Update<PriceType>('Prices', id, validatedUpdate);
+
     const price = await this.GetPrice(id);
     if (!price) {
       throw new AppError(
@@ -316,12 +316,12 @@ export class PriceModule {
       unit_amount: input.unit_amount,
       object: 'price',
       billing_scheme: input.billing_scheme ?? 'per_unit',
-      currency_options: input.currency_options ?? null, 
+      currency_options: input.currency_options ?? null,
       created: Now(),
       custom_unit_amount: input.custom_unit_amount ?? null,
       livemode: GetAppConfig().livemode,
       lookup_key: input.lookup_key ?? null,
-      tiers: input.tiers ?? null, 
+      tiers: input.tiers ?? null,
       tiers_mode: input.tiers_mode ?? null,
       transform_quantity: input.transform_quantity ?? null,
       unit_amount_decimal:
