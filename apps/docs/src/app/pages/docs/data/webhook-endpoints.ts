@@ -97,7 +97,7 @@ const WEBHOOK_ENDPOINT_ATTRIBUTES: Attribute[] = [
     name: 'secret',
     type: 'string',
     description:
-      'The endpoint\'s secret, used to generate webhook signatures. <strong>Only returned at creation.</strong> See <a href="/docs/webhooks">Webhooks</a> for information on verifying webhook signatures.',
+      'The endpoint\'s secret, used to generate webhook signatures. <strong>Only returned at creation.</strong> See <a href="/webhooks">Webhooks</a> for information on verifying webhook signatures.',
   },
   {
     name: 'status',

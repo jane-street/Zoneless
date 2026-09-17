@@ -47,7 +47,7 @@ export const PLATFORM_DASHBOARD_PAGE: DocPage = {
               text: 'Create connected accounts for sellers and service providers.',
             },
             {
-              text: 'Copy an <a href="/docs/account-links">Account Link</a> to send a seller through Express onboarding.',
+              text: 'Copy an <a href="/account-links">Account Link</a> to send a seller through Express onboarding.',
               html: true,
             },
             {
@@ -60,7 +60,7 @@ export const PLATFORM_DASHBOARD_PAGE: DocPage = {
         },
         {
           type: 'paragraph',
-          text: 'For a complete walkthrough, follow the <a href="/docs/quickstart">dashboard quickstart</a>.',
+          text: 'For a complete walkthrough, follow the <a href="/quickstart">dashboard quickstart</a>.',
           html: true,
         },
       ],
@@ -76,15 +76,15 @@ export const PLATFORM_DASHBOARD_PAGE: DocPage = {
           type: 'list',
           items: [
             {
-              text: '<strong><a href="/docs/fund-platform-wallet">Add funds</a>:</strong> Buy USDC and send it to your platform wallet.',
+              text: '<strong><a href="/fund-platform-wallet">Add funds</a>:</strong> Buy USDC and send it to your platform wallet.',
               html: true,
             },
             {
-              text: '<strong><a href="/docs/transfers">Transfer funds</a>:</strong> Credit a connected account\'s Zoneless balance.',
+              text: '<strong><a href="/transfers">Transfer funds</a>:</strong> Credit a connected account\'s Zoneless balance.',
               html: true,
             },
             {
-              text: '<strong><a href="/docs/payouts">Create a payout</a>:</strong> Send USDC from that balance to the seller\'s Solana wallet.',
+              text: '<strong><a href="/payouts">Create a payout</a>:</strong> Send USDC from that balance to the seller\'s Solana wallet.',
               html: true,
             },
           ],
@@ -114,14 +114,14 @@ export const PLATFORM_DASHBOARD_PAGE: DocPage = {
         },
         {
           type: 'paragraph',
-          text: 'Create a <a href="/docs/login-links">Login Link</a> when a seller needs access. Login Links are single-use and expire after five minutes, so generate a new one for each session.',
+          text: 'Create a <a href="/login-links">Login Link</a> when a seller needs access. Login Links are single-use and expire after five minutes, so generate a new one for each session.',
           html: true,
         },
         {
           type: 'callout',
           variant: 'info',
           title: 'Account Links and Login Links serve different purposes. ',
-          text: 'Use an <a href="/docs/account-links">Account Link</a> for onboarding or required account updates. Use a <a href="/docs/login-links">Login Link</a> to open the seller\'s Express Dashboard.',
+          text: 'Use an <a href="/account-links">Account Link</a> for onboarding or required account updates. Use a <a href="/login-links">Login Link</a> to open the seller\'s Express Dashboard.',
           html: true,
         },
       ],
@@ -147,15 +147,15 @@ export const PLATFORM_DASHBOARD_PAGE: DocPage = {
           type: 'list',
           items: [
             {
-              text: '<strong><a href="/docs/authentication">API keys</a>:</strong> Create and revoke keys for server-side API requests.',
+              text: '<strong><a href="/authentication">API keys</a>:</strong> Create and revoke keys for server-side API requests.',
               html: true,
             },
             {
-              text: '<strong><a href="/docs/webhooks">Webhooks</a>:</strong> Register endpoints and choose which events they receive.',
+              text: '<strong><a href="/webhooks">Webhooks</a>:</strong> Register endpoints and choose which events they receive.',
               html: true,
             },
             {
-              text: '<strong><a href="/docs/events">Events</a>:</strong> Review activity and inspect event payloads while debugging.',
+              text: '<strong><a href="/events">Events</a>:</strong> Review activity and inspect event payloads while debugging.',
               html: true,
             },
           ],
@@ -184,7 +184,7 @@ export const PLATFORM_DASHBOARD_PAGE: DocPage = {
         },
         {
           type: 'paragraph',
-          text: 'You can keep collecting customer payments with Stripe and use Zoneless only for seller onboarding and USDC payouts. See <a href="/docs/migrate-from-stripe">Migrate from Stripe</a> for that setup.',
+          text: 'You can keep collecting customer payments with Stripe and use Zoneless only for seller onboarding and USDC payouts. See <a href="/migrate-from-stripe">Migrate from Stripe</a> for that setup.',
           html: true,
         },
       ],
@@ -194,7 +194,7 @@ export const PLATFORM_DASHBOARD_PAGE: DocPage = {
         { type: 'heading', level: 2, text: 'Self-hosted dashboard access' },
         {
           type: 'paragraph',
-          text: 'The <a href="/docs/self-hosting">setup wizard</a> creates your platform and signs you in to the dashboard. If the session expires, open the platform login route on your instance and enter your platform API key.',
+          text: 'The <a href="/self-hosting">setup wizard</a> creates your platform and signs you in to the dashboard. If the session expires, open the platform login route on your instance and enter your platform API key.',
           html: true,
         },
         {
@@ -225,15 +225,15 @@ export const PLATFORM_DASHBOARD_PAGE: DocPage = {
           type: 'list',
           items: [
             {
-              text: '<strong><a href="/docs/quickstart">Dashboard quickstart</a>:</strong> Onboard and pay your first seller',
+              text: '<strong><a href="/quickstart">Dashboard quickstart</a>:</strong> Onboard and pay your first seller',
               html: true,
             },
             {
-              text: '<strong><a href="/docs/api-quickstart">API quickstart</a>:</strong> Build the same flow with Node.js or cURL',
+              text: '<strong><a href="/api-quickstart">API quickstart</a>:</strong> Build the same flow with Node.js or cURL',
               html: true,
             },
             {
-              text: '<strong><a href="/docs/identity-verification">Identity verification</a>:</strong> Add KYC checks before payouts',
+              text: '<strong><a href="/identity-verification">Identity verification</a>:</strong> Add KYC checks before payouts',
               html: true,
             },
           ],

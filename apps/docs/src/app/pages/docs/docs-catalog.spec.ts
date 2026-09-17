@@ -4,8 +4,8 @@ describe('docs catalog', () => {
   it('exposes the public guide and API slugs', () => {
     const routes = GetDocRoutes().map((route) => route.route);
 
-    expect(routes).toContain('/docs/quickstart');
-    expect(routes).toContain('/docs/accounts/create');
-    expect(routes).toContain('/docs/checkout-sessions');
+    expect(routes).toContain('/quickstart');
+    expect(routes).toContain('/accounts/create');
+    expect(routes).toContain('/checkout-sessions');
   });
 });

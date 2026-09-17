@@ -30,11 +30,11 @@ export const CONNECTED_ACCOUNTS_PAGE: DocPage = {
           type: 'list',
           items: [
             {
-              text: 'Related guide: <a href="/docs/authentication">Authentication</a>',
+              text: 'Related guide: <a href="/authentication">Authentication</a>',
               html: true,
             },
             {
-              text: 'API reference: <a href="/docs/accounts">Accounts API</a>',
+              text: 'API reference: <a href="/accounts">Accounts API</a>',
               html: true,
             },
           ],

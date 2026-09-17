@@ -81,7 +81,7 @@ const PRICES_ATTRIBUTES: Attribute[] = [
     tooltip: {
       label: 'Expandable',
       content:
-        'This can be <a href="/docs/expanding_objects">expanded</a> into an object with the <code>expand</code> request parameter.',
+        'This can be <a href="/expanding_objects">expanded</a> into an object with the <code>expand</code> request parameter.',
     },
   },
   {

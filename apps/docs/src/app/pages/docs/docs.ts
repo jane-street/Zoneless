@@ -29,7 +29,12 @@ import {
   Attribute,
   GUIDE_SECTIONS,
 } from './data';
-import { docPageGroups, docSections, docSinglePages } from './docs-catalog';
+import {
+  docPageGroups,
+  docSections,
+  docSinglePages,
+  DocHref,
+} from './docs-catalog';
 import { GeneratePageMarkdown, HtmlToText } from './docs-markdown';
 
 interface SearchItem {
@@ -168,7 +173,7 @@ export class Docs implements OnInit, OnDestroy, AfterViewInit {
       title: 'Documentation | Zoneless',
       description:
         'Accept USDC payments, run subscriptions, and pay out sellers with Zoneless. API reference, guides, and examples.',
-      url: 'https://zoneless.com/docs',
+      url: 'https://docs.zoneless.com',
       image: 'https://zoneless.com/assets/images/screenshots/og.png',
     });
   }
@@ -243,7 +248,7 @@ export class Docs implements OnInit, OnDestroy, AfterViewInit {
               window.history.replaceState(
                 null,
                 '',
-                `/docs/${section}/${currentSub}`
+                DocHref(section, currentSub)
               );
             }, 150);
           }
@@ -302,7 +307,7 @@ export class Docs implements OnInit, OnDestroy, AfterViewInit {
     this.activeSection.set(sectionId);
     this.expandParentSections(sectionId);
     this.mobileMenuOpen.set(false);
-    this.router.navigate(['/docs', sectionId], { replaceUrl: true });
+    this.router.navigateByUrl(DocHref(sectionId), { replaceUrl: true });
 
     // Scroll to top
     if (this.isBrowser) {
@@ -316,7 +321,7 @@ export class Docs implements OnInit, OnDestroy, AfterViewInit {
     this.activeSubSection.set(subSectionId);
     this.expandParentSections(sectionId);
     this.mobileMenuOpen.set(false);
-    this.router.navigate(['/docs', sectionId, subSectionId], {
+    this.router.navigateByUrl(DocHref(sectionId, subSectionId), {
       replaceUrl: true,
     });
 
@@ -450,7 +455,7 @@ export class Docs implements OnInit, OnDestroy, AfterViewInit {
 
   GetEndpointHref(endpoint: EndpointSummary): string {
     if (!endpoint.pageId) return '';
-    return `/docs/${this.activeSection()}/${endpoint.pageId}`;
+    return DocHref(this.activeSection(), endpoint.pageId);
   }
 
   NavigateToEndpoint(event: Event, endpoint: EndpointSummary): void {
@@ -480,7 +485,7 @@ export class Docs implements OnInit, OnDestroy, AfterViewInit {
   GetAnchorHref(pageId: string, anchorId: string): string {
     const section = this.activeSection();
     const basePath =
-      section === pageId ? `/docs/${section}` : `/docs/${section}/${pageId}`;
+      section === pageId ? DocHref(section) : DocHref(section, pageId);
     const prefix = `${pageId}-`;
     const hash =
       section !== pageId && anchorId.startsWith(prefix)

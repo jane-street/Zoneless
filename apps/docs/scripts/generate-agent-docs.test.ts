@@ -19,7 +19,7 @@ const testPage: DocPage = {
   id: 'create',
   title: 'Create a product',
   description:
-    'Create a <strong>product</strong>. <a href="/docs/products">Read more</a>.',
+    'Create a <strong>product</strong>. <a href="/products">Read more</a>.',
   sections: [
     {
       left: [
@@ -61,7 +61,7 @@ const testPage: DocPage = {
 };
 
 const testRoute: DocRoute = {
-  route: '/docs/products/create',
+  route: '/products/create',
   title: testPage.title,
   description: testPage.description,
   category: 'Products',
@@ -74,7 +74,7 @@ test('GeneratePageMarkdown serializes nested attributes, links, and code', () =>
   });
 
   assert.match(markdown, /\*\*product\*\*/);
-  assert.match(markdown, /\[Read more\]\(\/docs\/products\)/);
+  assert.match(markdown, /\[Read more\]\(\/products\)/);
   assert.match(markdown, /`metadata\.owner` \(string, required\)/);
   assert.match(markdown, /### Request — cURL/);
   assert.match(markdown, /### Request — Node\.js/);
@@ -89,7 +89,7 @@ test('BuildLlmsTxt uses canonical Markdown URLs and plain descriptions', () => {
   assert.match(contents, /when integrating with Zoneless\.\n\n## Products/);
   assert.match(
     contents,
-    /\[Create a product\]\(https:\/\/zoneless\.com\/docs\/products\/create\.md\)/
+    /\[Create a product\]\(https:\/\/docs\.zoneless\.com\/products\/create\.md\)/
   );
   assert.doesNotMatch(contents, /<strong>|<a /);
   assert.equal(HtmlToText(testPage.description).includes('**product**'), true);
@@ -100,11 +100,11 @@ test('llms.txt includes both agent quickstarts', () => {
 
   assert.match(
     contents,
-    /\[Agent Payments Quickstart\]\(https:\/\/zoneless\.com\/docs\/agent-payments-quickstart\.md\)/
+    /\[Agent Payments Quickstart\]\(https:\/\/docs\.zoneless\.com\/agent-payments-quickstart\.md\)/
   );
   assert.match(
     contents,
-    /\[Agent Marketplace Quickstart\]\(https:\/\/zoneless\.com\/docs\/agent-marketplace-quickstart\.md\)/
+    /\[Agent Marketplace Quickstart\]\(https:\/\/docs\.zoneless\.com\/agent-marketplace-quickstart\.md\)/
   );
 });
 
@@ -138,14 +138,14 @@ test('GenerateAgentDocs emits the marketplace agent bootstrap document', async (
   context.after(() => fs.rm(outputDir, { recursive: true, force: true }));
 
   const marketplaceRoute = GetDocRoutes().find(
-    (route) => route.route === '/docs/agent-marketplace-quickstart'
+    (route) => route.route === '/agent-marketplace-quickstart'
   );
   assert.ok(marketplaceRoute);
 
   await GenerateAgentDocs({ outputDir, routes: [marketplaceRoute] });
 
   const markdown = await fs.readFile(
-    path.join(outputDir, 'docs/agent-marketplace-quickstart.md'),
+    path.join(outputDir, 'agent-marketplace-quickstart.md'),
     'utf8'
   );
   const llmsTxt = await fs.readFile(path.join(outputDir, 'llms.txt'), 'utf8');
@@ -155,7 +155,7 @@ test('GenerateAgentDocs emits the marketplace agent bootstrap document', async (
   assert.match(markdown, /--skill marketplace \\\n {2}--json/);
   assert.match(markdown, /`--new-platform`/);
   assert.match(markdown, /`skill_path`/);
-  assert.match(markdown, /\[API Quickstart\]\(\/docs\/api-quickstart\)/);
+  assert.match(markdown, /\[API Quickstart\]\(\/api-quickstart\)/);
   assert.match(markdown, /https:\/\/api-test\.zoneless\.com/);
   assert.match(markdown, /https:\/\/api\.zoneless\.com/);
   assert.match(markdown, /Assume no crypto knowledge/);
@@ -171,12 +171,12 @@ test('GenerateAgentDocs emits the marketplace agent bootstrap document', async (
   assert.match(markdown, /destination charges/);
   assert.match(markdown, /Add test USDC/);
   assert.match(markdown, /test_helpers\/treasury\/topups/);
-  assert.match(markdown, /\[Local Development\]\(\/docs\/local-development\)/);
+  assert.match(markdown, /\[Local Development\]\(\/local-development\)/);
   assert.match(markdown, /does not need a wallet, faucet, or Devnet/);
   assert.match(markdown, /Do not assume create returns/);
   assert.match(
     markdown,
-    /\[Fund your platform wallet\]\(\/docs\/fund-platform-wallet\)/
+    /\[Fund your platform wallet\]\(\/fund-platform-wallet\)/
   );
   assert.match(
     markdown,
@@ -184,7 +184,7 @@ test('GenerateAgentDocs emits the marketplace agent bootstrap document', async (
   );
   assert.match(
     llmsTxt,
-    /https:\/\/zoneless\.com\/docs\/agent-marketplace-quickstart\.md/
+    /https:\/\/docs\.zoneless\.com\/agent-marketplace-quickstart\.md/
   );
 });
 
@@ -197,11 +197,11 @@ test('GenerateAgentDocs maps documentation routes to files', async (context) => 
   await GenerateAgentDocs({ outputDir, routes: [testRoute] });
 
   const markdown = await fs.readFile(
-    path.join(outputDir, 'docs/products/create.md'),
+    path.join(outputDir, 'products/create.md'),
     'utf8'
   );
   const llmsTxt = await fs.readFile(path.join(outputDir, 'llms.txt'), 'utf8');
 
   assert.match(markdown, /^# Create a product/);
-  assert.match(llmsTxt, /\/docs\/products\/create\.md/);
+  assert.match(llmsTxt, /\/products\/create\.md/);
 });

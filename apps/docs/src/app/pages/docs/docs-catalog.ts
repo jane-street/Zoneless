@@ -113,6 +113,10 @@ export const docSinglePages: DocPage[] = [
   IDENTITY_VERIFICATION_PAGE,
 ];
 
+export function DocHref(section: string, subsection?: string): string {
+  return subsection ? `/${section}/${subsection}` : `/${section}`;
+}
+
 export function GetDocPages(sectionId: string): DocPage[] {
   const pageGroup = docPageGroups[sectionId];
   if (pageGroup) return pageGroup;
@@ -130,7 +134,7 @@ export function GetDocRoutes(): DocRoute[] {
       if (pages.length === 0) continue;
 
       routes.push({
-        route: `/docs/${child.id}`,
+        route: DocHref(child.id),
         title: child.title,
         description: pages[0].description,
         category: section.title,
@@ -142,7 +146,7 @@ export function GetDocRoutes(): DocRoute[] {
         if (!page) continue;
 
         routes.push({
-          route: `/docs/${child.id}/${subChild.id}`,
+          route: DocHref(child.id, subChild.id),
           title: page.title,
           description: page.description,
           category: child.title,

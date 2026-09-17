@@ -259,15 +259,15 @@ export const IDENTITY_VERIFICATION_PAGE: DocPage = {
           type: 'list',
           items: [
             {
-              text: '<a href="/docs/connected-accounts">Connected accounts</a> - manage your marketplace sellers',
+              text: '<a href="/connected-accounts">Connected accounts</a> - manage your marketplace sellers',
               html: true,
             },
             {
-              text: '<a href="/docs/webhooks">Webhooks</a> - receive updates from Zoneless',
+              text: '<a href="/webhooks">Webhooks</a> - receive updates from Zoneless',
               html: true,
             },
             {
-              text: '<a href="/docs/payouts">Payouts</a> - pay connected accounts in USDC',
+              text: '<a href="/payouts">Payouts</a> - pay connected accounts in USDC',
               html: true,
             },
             {

@@ -449,7 +449,7 @@ const CUSTOMER_ATTRIBUTES: Attribute[] = [
     description: "The customer's payment sources, if any.",
     expandable: true,
     enumNote:
-      '<strong>Difference from Stripe:</strong> Zoneless customers pay from linked Solana wallets rather than bank accounts, so each item in <code>sources.data</code> represents a wallet rather than a bank account. See <a href="/docs/external-wallets">External Wallets</a> for the equivalent object sellers use to receive USDC payouts.',
+      '<strong>Difference from Stripe:</strong> Zoneless customers pay from linked Solana wallets rather than bank accounts, so each item in <code>sources.data</code> represents a wallet rather than a bank account. See <a href="/external-wallets">External Wallets</a> for the equivalent object sellers use to receive USDC payouts.',
     children: [
       {
         name: 'object',
@@ -1071,7 +1071,7 @@ export const CUSTOMERS_OVERVIEW_PAGE: DocPage = {
           type: 'callout',
           variant: 'info',
           title: 'Key concept: ',
-          text: 'A customer\'s <code>sources</code> are linked Solana wallets used to pay your platform, not bank accounts. This is distinct from <a href="/docs/external-wallets">External Wallets</a>, which sellers use to receive USDC payouts.',
+          text: 'A customer\'s <code>sources</code> are linked Solana wallets used to pay your platform, not bank accounts. This is distinct from <a href="/external-wallets">External Wallets</a>, which sellers use to receive USDC payouts.',
           html: true,
         },
         { type: 'heading', level: 2, text: 'Attributes' },
@@ -1385,7 +1385,7 @@ const CREATE_CUSTOMER_MORE_PARAMETERS: Attribute[] = [
     name: 'source',
     type: 'string',
     description:
-      'When using payment sources created via the Token or Sources APIs, passing <code>source</code> creates a new source object, makes it the new customer default source, and deletes the old customer default if one exists. If you want to add additional sources instead of replacing the existing default, use the <a href="/docs/external-wallets">External Wallets API</a> instead.',
+      'When using payment sources created via the Token or Sources APIs, passing <code>source</code> creates a new source object, makes it the new customer default source, and deletes the old customer default if one exists. If you want to add additional sources instead of replacing the existing default, use the <a href="/external-wallets">External Wallets API</a> instead.',
   },
   {
     name: 'tax',
@@ -1467,7 +1467,7 @@ export const CUSTOMERS_CREATE_PAGE: DocPage = {
         { type: 'heading', level: 2, text: 'Returns' },
         {
           type: 'paragraph',
-          text: 'Returns the <code>Customer</code> object after successful customer creation. Raises <a href="/docs/errors">an error</a> if create parameters are invalid (for example, specifying an invalid source).',
+          text: 'Returns the <code>Customer</code> object after successful customer creation. Raises <a href="/errors">an error</a> if create parameters are invalid (for example, specifying an invalid source).',
           html: true,
         },
       ],
@@ -1796,7 +1796,7 @@ const UPDATE_CUSTOMER_MORE_PARAMETERS: Attribute[] = [
     name: 'source',
     type: 'string',
     description:
-      'When using payment sources created via the Token or Sources APIs, passing <code>source</code> creates a new source object, makes it the new customer default source, and deletes the old customer default if one exists. If you want to add additional sources instead of replacing the existing default, use the <a href="/docs/external-wallets">External Wallets API</a> instead.',
+      'When using payment sources created via the Token or Sources APIs, passing <code>source</code> creates a new source object, makes it the new customer default source, and deletes the old customer default if one exists. If you want to add additional sources instead of replacing the existing default, use the <a href="/external-wallets">External Wallets API</a> instead.',
   },
   {
     name: 'tax',
@@ -1888,7 +1888,7 @@ export const CUSTOMERS_UPDATE_PAGE: DocPage = {
         { type: 'heading', level: 2, text: 'Returns' },
         {
           type: 'paragraph',
-          text: 'Returns the <code>Customer</code> object if the update succeeded. Raises <a href="/docs/errors">an error</a> if update parameters are invalid (for example, specifying an invalid source).',
+          text: 'Returns the <code>Customer</code> object if the update succeeded. Raises <a href="/errors">an error</a> if update parameters are invalid (for example, specifying an invalid source).',
           html: true,
         },
       ],
@@ -2157,7 +2157,7 @@ export const CUSTOMERS_DELETE_PAGE: DocPage = {
         { type: 'heading', level: 2, text: 'Returns' },
         {
           type: 'paragraph',
-          text: 'Returns an object with a <code>deleted</code> parameter on success. If the customer ID does not exist, this call raises <a href="/docs/errors">an error</a>.<br/><br/>Unlike other objects, deleted customers can still be retrieved through the API in order to be able to track their history. Deleting customers removes all wallet details and prevents any further operations to be performed (such as adding a new subscription).',
+          text: 'Returns an object with a <code>deleted</code> parameter on success. If the customer ID does not exist, this call raises <a href="/errors">an error</a>.<br/><br/>Unlike other objects, deleted customers can still be retrieved through the API in order to be able to track their history. Deleting customers removes all wallet details and prevents any further operations to be performed (such as adding a new subscription).',
           html: true,
         },
       ],

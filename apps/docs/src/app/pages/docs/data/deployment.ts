@@ -139,7 +139,7 @@ cd zoneless`,
         { type: 'heading', level: 2, text: '5. Configure environment' },
         {
           type: 'paragraph',
-          text: 'Copy the production example and set your public dashboard URL, app secret, network, and tenancy mode. The example below uses mainnet. Set <code>LIVEMODE=false</code> for test mode (simulated funds by default). To test real Devnet transactions instead, also set <code>SETTLEMENT_RAIL=onchain</code>. See <a href="/docs/environment-variables">Environment variables</a> for optional settings.',
+          text: 'Copy the production example and set your public dashboard URL, app secret, network, and tenancy mode. The example below uses mainnet. Set <code>LIVEMODE=false</code> for test mode (simulated funds by default). To test real Devnet transactions instead, also set <code>SETTLEMENT_RAIL=onchain</code>. See <a href="/environment-variables">Environment variables</a> for optional settings.',
           html: true,
         },
         {
@@ -206,7 +206,7 @@ SINGLE_TENANT=true`,
         { type: 'heading', level: 2, text: '7. Check the deployment' },
         {
           type: 'paragraph',
-          text: 'Check the API using the server IP, then open <code>http://YOUR_IP_ADDRESS/setup</code> and complete the <a href="/docs/self-hosting">setup wizard</a>.',
+          text: 'Check the API using the server IP, then open <code>http://YOUR_IP_ADDRESS/setup</code> and complete the <a href="/self-hosting">setup wizard</a>.',
           html: true,
         },
       ],

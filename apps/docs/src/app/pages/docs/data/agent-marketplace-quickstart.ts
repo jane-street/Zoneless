@@ -16,7 +16,7 @@ export const AGENT_MARKETPLACE_QUICKSTART_PAGE: DocPage = {
           type: 'callout',
           variant: 'info',
           title: 'Collecting payments from customers instead?',
-          text: 'Use the <a href="/docs/agent-payments-quickstart">Agent Payments Quickstart</a> when the goal is USDC subscriptions or checkout rather than paying sellers out.',
+          text: 'Use the <a href="/agent-payments-quickstart">Agent Payments Quickstart</a> when the goal is USDC subscriptions or checkout rather than paying sellers out.',
           html: true,
         },
         {
@@ -101,7 +101,7 @@ export const AGENT_MARKETPLACE_QUICKSTART_PAGE: DocPage = {
         },
         {
           type: 'paragraph',
-          text: 'Follow that skill as the implementation and safety contract. Start with the <a href="/docs/api-quickstart">API Quickstart</a>, use <a href="https://zoneless.com/llms.txt">llms.txt</a> as an index, and read other resource pages only when implementing that resource or when blocked. Do not fetch the entire documentation set upfront.',
+          text: 'Follow that skill as the implementation and safety contract. Start with the <a href="/api-quickstart">API Quickstart</a>, use <a href="https://docs.zoneless.com/llms.txt">llms.txt</a> as an index, and read other resource pages only when implementing that resource or when blocked. Do not fetch the entire documentation set upfront.',
           html: true,
         },
       ],
@@ -227,7 +227,7 @@ export const AGENT_MARKETPLACE_QUICKSTART_PAGE: DocPage = {
         },
         {
           type: 'paragraph',
-          text: 'Before an end-to-end test payout, tell the human to add test USDC from the dashboard <strong>Balance</strong> page (<strong>Add test USDC</strong>) or with <code>POST /v1/test_helpers/treasury/topups</code>. Create the payout, then process it with the same <code>processAll</code> / build and broadcast path as live. Simulated settlement does not need a wallet, faucet, or Devnet: broadcast the unsigned dummy transaction. Do not assume create returns <code>paid</code>. Self-hosters who set <code>SETTLEMENT_RAIL=onchain</code> should follow <a href="/docs/local-development">Local Development</a> instead.',
+          text: 'Before an end-to-end test payout, tell the human to add test USDC from the dashboard <strong>Balance</strong> page (<strong>Add test USDC</strong>) or with <code>POST /v1/test_helpers/treasury/topups</code>. Create the payout, then process it with the same <code>processAll</code> / build and broadcast path as live. Simulated settlement does not need a wallet, faucet, or Devnet: broadcast the unsigned dummy transaction. Do not assume create returns <code>paid</code>. Self-hosters who set <code>SETTLEMENT_RAIL=onchain</code> should follow <a href="/local-development">Local Development</a> instead.',
           html: true,
         },
         {
@@ -237,7 +237,7 @@ export const AGENT_MARKETPLACE_QUICKSTART_PAGE: DocPage = {
         },
         {
           type: 'paragraph',
-          text: 'The human must run the wallet backup command themselves in an interactive terminal, place the backup\'s <code>secretKeyBase58</code> value directly in the production secret manager as <code>SOLANA_SECRET_KEY</code>, and securely delete the temporary export. They must then follow <a href="/docs/fund-platform-wallet">Fund your platform wallet</a> to add enough USDC for seller payouts and a small amount of SOL for Solana network fees, configure live webhooks, and approve a supervised end-to-end payout.',
+          text: 'The human must run the wallet backup command themselves in an interactive terminal, place the backup\'s <code>secretKeyBase58</code> value directly in the production secret manager as <code>SOLANA_SECRET_KEY</code>, and securely delete the temporary export. They must then follow <a href="/fund-platform-wallet">Fund your platform wallet</a> to add enough USDC for seller payouts and a small amount of SOL for Solana network fees, configure live webhooks, and approve a supervised end-to-end payout.',
           html: true,
         },
         {

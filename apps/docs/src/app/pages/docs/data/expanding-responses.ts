@@ -76,11 +76,11 @@ export const EXPANDING_RESPONSES_PAGE: DocPage = {
           type: 'list',
           items: [
             {
-              text: 'API reference: <a href="/docs/prices">Prices API</a>',
+              text: 'API reference: <a href="/prices">Prices API</a>',
               html: true,
             },
             {
-              text: 'API reference: <a href="/docs/products">Products API</a>',
+              text: 'API reference: <a href="/products">Products API</a>',
               html: true,
             },
           ],

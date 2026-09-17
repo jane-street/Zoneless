@@ -138,7 +138,7 @@ export const ENVIRONMENT_VARIABLES_PAGE: DocPage = {
           type: 'list',
           items: [
             {
-              text: '<code>POST /v1/billing/run_for_platform</code>: Call on a schedule with your API key. See <a href="/docs/billing">Billing Helpers</a>.',
+              text: '<code>POST /v1/billing/run_for_platform</code>: Call on a schedule with your API key. See <a href="/billing">Billing Helpers</a>.',
               html: true,
             },
             {
@@ -199,15 +199,15 @@ SINGLE_TENANT=true`,
           type: 'list',
           items: [
             {
-              text: '<strong><a href="/docs/self-hosting">Self-hosting</a>:</strong> Start a local instance',
+              text: '<strong><a href="/self-hosting">Self-hosting</a>:</strong> Start a local instance',
               html: true,
             },
             {
-              text: '<strong><a href="/docs/deployment">Deployment</a>:</strong> Configure a production server',
+              text: '<strong><a href="/deployment">Deployment</a>:</strong> Configure a production server',
               html: true,
             },
             {
-              text: '<strong><a href="/docs/local-development">Local Development</a>:</strong> Test and debug Docker',
+              text: '<strong><a href="/local-development">Local Development</a>:</strong> Test and debug Docker',
               html: true,
             },
           ],

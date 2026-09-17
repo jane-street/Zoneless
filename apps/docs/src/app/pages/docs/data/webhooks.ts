@@ -119,7 +119,7 @@ export const WEBHOOKS_PAGE: DocPage = {
           type: 'list',
           items: [
             {
-              text: 'Register a webhook endpoint URL via the <a href="/docs/platform-dashboard">Platform Dashboard</a> or the <a href="/docs/webhook-endpoints">Webhook Endpoints API</a>.',
+              text: 'Register a webhook endpoint URL via the <a href="/platform-dashboard">Platform Dashboard</a> or the <a href="/webhook-endpoints">Webhook Endpoints API</a>.',
               html: true,
             },
             {
@@ -295,7 +295,7 @@ const webhookEndpoint = await zoneless.webhookEndpoints.create({
         { type: 'heading', level: 2, text: 'Event types' },
         {
           type: 'paragraph',
-          text: 'When registering a webhook endpoint, specify which event types to subscribe to. Use <code>["*"]</code> to receive all events. See <a href="/docs/events/types">Types of events</a> for the full list of available event types.',
+          text: 'When registering a webhook endpoint, specify which event types to subscribe to. Use <code>["*"]</code> to receive all events. See <a href="/events/types">Types of events</a> for the full list of available event types.',
           html: true,
         },
       ],
@@ -310,7 +310,7 @@ const webhookEndpoint = await zoneless.webhookEndpoints.create({
         },
         {
           type: 'paragraph',
-          text: 'Use the <a href="/docs/events">Events API</a> to inspect event history and retrieve an event when recovering or reconciling application state.',
+          text: 'Use the <a href="/events">Events API</a> to inspect event history and retrieve an event when recovering or reconciling application state.',
           html: true,
         },
       ],

@@ -204,15 +204,15 @@ export const FUND_PLATFORM_WALLET_PAGE: DocPage = {
           type: 'list',
           items: [
             {
-              text: '<a href="/docs/quickstart">Dashboard quickstart</a> - onboard a seller and send a payout',
+              text: '<a href="/quickstart">Dashboard quickstart</a> - onboard a seller and send a payout',
               html: true,
             },
             {
-              text: '<a href="/docs/api-quickstart">API quickstart</a> - create transfers and payouts from your app',
+              text: '<a href="/api-quickstart">API quickstart</a> - create transfers and payouts from your app',
               html: true,
             },
             {
-              text: '<a href="/docs/local-development#test-funds">Test funds</a> - add simulated USDC in test mode without using real money',
+              text: '<a href="/local-development#test-funds">Test funds</a> - add simulated USDC in test mode without using real money',
               html: true,
             },
           ],

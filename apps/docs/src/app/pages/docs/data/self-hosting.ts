@@ -9,7 +9,7 @@ export const SELF_HOSTING_PAGE: DocPage = {
       left: [
         {
           type: 'paragraph',
-          text: 'The steps below start a local instance in test mode with simulated USDC. For a public mainnet instance, follow <a href="/docs/deployment">Deployment</a> after testing locally.',
+          text: 'The steps below start a local instance in test mode with simulated USDC. For a public mainnet instance, follow <a href="/deployment">Deployment</a> after testing locally.',
           html: true,
         },
         {
@@ -109,7 +109,7 @@ curl http://localhost/api/health`,
           type: 'callout',
           variant: 'info',
           title: 'One account per instance by default. ',
-          text: 'Self-hosted instances use single-tenant mode. Hosting multiple accounts requires different <a href="/docs/environment-variables">tenancy settings</a>.',
+          text: 'Self-hosted instances use single-tenant mode. Hosting multiple accounts requires different <a href="/environment-variables">tenancy settings</a>.',
           html: true,
         },
       ],
@@ -123,7 +123,7 @@ curl http://localhost/api/health`,
         },
         {
           type: 'paragraph',
-          text: 'Use the API key from setup and <code>http://localhost</code> as the base URL. See <a href="/docs/authentication">Authentication</a> for key handling.',
+          text: 'Use the API key from setup and <code>http://localhost</code> as the base URL. See <a href="/authentication">Authentication</a> for key handling.',
           html: true,
         },
       ],
@@ -168,23 +168,23 @@ curl http://localhost/v1/balance \\
           type: 'list',
           items: [
             {
-              text: '<strong><a href="/docs/checkout-api-quickstart">Checkout API quickstart</a>:</strong> Accept a test USDC payment',
+              text: '<strong><a href="/checkout-api-quickstart">Checkout API quickstart</a>:</strong> Accept a test USDC payment',
               html: true,
             },
             {
-              text: '<strong><a href="/docs/api-quickstart">Connect API quickstart</a>:</strong> Create and pay a connected account',
+              text: '<strong><a href="/api-quickstart">Connect API quickstart</a>:</strong> Create and pay a connected account',
               html: true,
             },
             {
-              text: '<strong><a href="/docs/environment-variables">Environment variables</a>:</strong> Configure URLs, MongoDB, settlement, and optional services',
+              text: '<strong><a href="/environment-variables">Environment variables</a>:</strong> Configure URLs, MongoDB, settlement, and optional services',
               html: true,
             },
             {
-              text: '<strong><a href="/docs/deployment">Deployment</a>:</strong> Run Zoneless on a VPS in production',
+              text: '<strong><a href="/deployment">Deployment</a>:</strong> Run Zoneless on a VPS in production',
               html: true,
             },
             {
-              text: '<strong><a href="/docs/local-development">Local Development</a>:</strong> Add test funds and debug your containers',
+              text: '<strong><a href="/local-development">Local Development</a>:</strong> Add test funds and debug your containers',
               html: true,
             },
           ],

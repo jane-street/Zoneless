@@ -207,7 +207,7 @@
         <div class="article-header-left">
           @if (IsGuidePage() && $index === 0) {
           <nav class="article-breadcrumb" aria-label="Breadcrumb">
-            <a href="/docs" class="breadcrumb-link">Home</a>
+            <a href="/" class="breadcrumb-link">Home</a>
             <span class="breadcrumb-separator">/</span>
             <span>{{ GetBreadcrumbCategory() }}</span>
           </nav>
@@ -314,7 +314,7 @@
               @for (event of page.events; track event.name) {
               <a
                 class="api-nav-row api-nav-event-row"
-                href="/docs/events/types"
+                href="/events/types"
                 (click)="NavigateToEventTypes($event)"
               >
                 <div class="api-nav-row-content">

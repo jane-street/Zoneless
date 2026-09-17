@@ -10,7 +10,7 @@ import {
   HtmlToText,
 } from '../src/app/pages/docs/docs-markdown';
 
-const defaultSiteUrl = 'https://zoneless.com';
+const defaultSiteUrl = 'https://docs.zoneless.com';
 
 export interface AgentDocsOptions {
   outputDir: string;

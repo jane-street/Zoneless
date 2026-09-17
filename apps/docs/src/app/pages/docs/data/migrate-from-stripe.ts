@@ -16,7 +16,7 @@ export const MIGRATE_FROM_STRIPE_PAGE: DocPage = {
         },
         {
           type: 'paragraph',
-          text: 'You can also use <a href="/docs/checkout-api-quickstart">Zoneless Checkout</a> and the payments APIs, but you do not have to move customer payments. A common setup is to keep collecting payments with Stripe, convert the money you need for seller payouts to USDC, and <a href="/docs/fund-platform-wallet">fund your Zoneless platform wallet</a>.',
+          text: 'You can also use <a href="/checkout-api-quickstart">Zoneless Checkout</a> and the payments APIs, but you do not have to move customer payments. A common setup is to keep collecting payments with Stripe, convert the money you need for seller payouts to USDC, and <a href="/fund-platform-wallet">fund your Zoneless platform wallet</a>.',
           html: true,
         },
       ],
@@ -93,12 +93,12 @@ const account = await zoneless.accounts.create({
         },
         {
           type: 'paragraph',
-          text: 'Requests made on behalf of a connected account need one naming change. Replace the <code>Stripe-Account</code> header with <code>Zoneless-Account</code>. In the Node.js SDK, replace <code>stripeAccount</code> with <code>zonelessAccount</code>. See <a href="/docs/connected-accounts">Connected Accounts</a> for both examples.',
+          text: 'Requests made on behalf of a connected account need one naming change. Replace the <code>Stripe-Account</code> header with <code>Zoneless-Account</code>. In the Node.js SDK, replace <code>stripeAccount</code> with <code>zonelessAccount</code>. See <a href="/connected-accounts">Connected Accounts</a> for both examples.',
           html: true,
         },
         {
           type: 'paragraph',
-          text: '<a href="/docs/account-links">Account Links</a> still send sellers through Express onboarding. Instead of adding a bank account or debit card, the seller connects the Solana wallet where they want to receive USDC.',
+          text: '<a href="/account-links">Account Links</a> still send sellers through Express onboarding. Instead of adding a bank account or debit card, the seller connects the Solana wallet where they want to receive USDC.',
           html: true,
         },
       ],
@@ -136,18 +136,18 @@ const account = await zoneless.accounts.create({
           type: 'list',
           items: [
             {
-              text: 'Create a <strong><a href="/docs/transfers">transfer</a></strong> to credit the connected account\'s Zoneless balance.',
+              text: 'Create a <strong><a href="/transfers">transfer</a></strong> to credit the connected account\'s Zoneless balance.',
               html: true,
             },
             {
-              text: 'Create a <strong><a href="/docs/payouts">payout</a></strong> on that account to move USDC to the seller\'s wallet.',
+              text: 'Create a <strong><a href="/payouts">payout</a></strong> on that account to move USDC to the seller\'s wallet.',
               html: true,
             },
           ],
         },
         {
           type: 'paragraph',
-          text: 'Creating a payout does not submit a Solana transaction. The payout stays <code>pending</code> until you call <code>payouts.processAll()</code> or <code>payouts.processBatch()</code> (or <code>build</code> and <code>broadcast</code>). That two-step flow is the same in test and live. Simulated test mode does not need a wallet signature; pass the unsigned transaction through to broadcast. The <a href="/docs/payouts">Payouts API reference</a> covers the endpoints.',
+          text: 'Creating a payout does not submit a Solana transaction. The payout stays <code>pending</code> until you call <code>payouts.processAll()</code> or <code>payouts.processBatch()</code> (or <code>build</code> and <code>broadcast</code>). That two-step flow is the same in test and live. Simulated test mode does not need a wallet signature; pass the unsigned transaction through to broadcast. The <a href="/payouts">Payouts API reference</a> covers the endpoints.',
           html: true,
         },
         {
@@ -168,37 +168,37 @@ const account = await zoneless.accounts.create({
         { type: 'heading', level: 3, text: 'USDC instead of fiat' },
         {
           type: 'paragraph',
-          text: 'Use <code>usdc</code> instead of fiat currency codes such as <code>usd</code>. Amounts use cents, so <code>1000</code> represents 10.00 USDC. If your revenue starts in Stripe or a bank account, follow the <a href="/docs/fund-platform-wallet">platform wallet funding guide</a>. You can use the <a href="/docs/topups">Top-ups API</a> to track deposits.',
+          text: 'Use <code>usdc</code> instead of fiat currency codes such as <code>usd</code>. Amounts use cents, so <code>1000</code> represents 10.00 USDC. If your revenue starts in Stripe or a bank account, follow the <a href="/fund-platform-wallet">platform wallet funding guide</a>. You can use the <a href="/topups">Top-ups API</a> to track deposits.',
           html: true,
         },
         { type: 'heading', level: 3, text: 'Wallets instead of bank accounts' },
         {
           type: 'paragraph',
-          text: 'The <code>external_accounts</code> collection contains Solana wallets. Wallet objects use the <code>wa_z_</code> prefix and expose a <code>wallet_address</code> instead of bank routing and account numbers. See <a href="/docs/external-wallets">External Wallets</a>.',
+          text: 'The <code>external_accounts</code> collection contains Solana wallets. Wallet objects use the <code>wa_z_</code> prefix and expose a <code>wallet_address</code> instead of bank routing and account numbers. See <a href="/external-wallets">External Wallets</a>.',
           html: true,
         },
         { type: 'heading', level: 3, text: 'On-chain payout processing' },
         {
           type: 'paragraph',
-          text: 'Your platform signs payout transactions and submits them to Solana. A payout remains pending until you process it. See <a href="/docs/payouts">Payouts</a> for the SDK helpers and custom signing endpoints.',
+          text: 'Your platform signs payout transactions and submits them to Solana. A payout remains pending until you process it. See <a href="/payouts">Payouts</a> for the SDK helpers and custom signing endpoints.',
           html: true,
         },
         { type: 'heading', level: 3, text: 'Payout timing' },
         {
           type: 'paragraph',
-          text: 'Zoneless payouts default to <code>instant</code>. Once submitted, Solana transactions usually confirm within seconds. Payout statuses and failure fields are documented in the <a href="/docs/payouts">Payout object</a>.',
+          text: 'Zoneless payouts default to <code>instant</code>. Once submitted, Solana transactions usually confirm within seconds. Payout statuses and failure fields are documented in the <a href="/payouts">Payout object</a>.',
           html: true,
         },
         { type: 'heading', level: 3, text: 'Webhook signatures' },
         {
           type: 'paragraph',
-          text: 'Replace <code>stripe.webhooks</code> with <code>zoneless.webhooks</code>, and read the signature from the <code>Zoneless-Signature</code> header. The raw request body and endpoint signing secret are used in the same way. See <a href="/docs/webhooks">Webhooks</a> for a complete Express handler.',
+          text: 'Replace <code>stripe.webhooks</code> with <code>zoneless.webhooks</code>, and read the signature from the <code>Zoneless-Signature</code> header. The raw request body and endpoint signing secret are used in the same way. See <a href="/webhooks">Webhooks</a> for a complete Express handler.',
           html: true,
         },
         { type: 'heading', level: 3, text: 'Cloud or self-hosted' },
         {
           type: 'paragraph',
-          text: 'Zoneless Cloud uses <code>https://api.zoneless.com</code>. If you <a href="/docs/self-hosting">self-host Zoneless</a>, use your instance URL when you create the SDK client and when you make direct API requests.',
+          text: 'Zoneless Cloud uses <code>https://api.zoneless.com</code>. If you <a href="/self-hosting">self-host Zoneless</a>, use your instance URL when you create the SDK client and when you make direct API requests.',
           html: true,
         },
       ],
@@ -249,7 +249,7 @@ const event = zoneless.webhooks.constructEvent(
         },
         {
           type: 'paragraph',
-          text: 'The <a href="/docs/api-quickstart">API quickstart</a> walks through this flow with working Node.js and cURL examples.',
+          text: 'The <a href="/api-quickstart">API quickstart</a> walks through this flow with working Node.js and cURL examples.',
           html: true,
         },
       ],
@@ -261,23 +261,23 @@ const event = zoneless.webhooks.constructEvent(
           type: 'list',
           items: [
             {
-              text: '<strong><a href="/docs/accounts">Accounts</a>:</strong> Create and manage connected accounts',
+              text: '<strong><a href="/accounts">Accounts</a>:</strong> Create and manage connected accounts',
               html: true,
             },
             {
-              text: '<strong><a href="/docs/account-links">Account Links</a>:</strong> Send sellers through hosted onboarding',
+              text: '<strong><a href="/account-links">Account Links</a>:</strong> Send sellers through hosted onboarding',
               html: true,
             },
             {
-              text: '<strong><a href="/docs/transfers">Transfers</a>:</strong> Credit connected account balances',
+              text: '<strong><a href="/transfers">Transfers</a>:</strong> Credit connected account balances',
               html: true,
             },
             {
-              text: '<strong><a href="/docs/payouts">Payouts</a>:</strong> Send USDC to seller wallets',
+              text: '<strong><a href="/payouts">Payouts</a>:</strong> Send USDC to seller wallets',
               html: true,
             },
             {
-              text: '<strong><a href="/docs/webhooks">Webhooks</a>:</strong> Update your event handling',
+              text: '<strong><a href="/webhooks">Webhooks</a>:</strong> Update your event handling',
               html: true,
             },
           ],

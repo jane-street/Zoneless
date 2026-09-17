@@ -167,15 +167,15 @@ export const PAYMENT_LINK_QUICKSTART_PAGE: DocPage = {
           type: 'list',
           items: [
             {
-              text: '<a href="/docs/checkout-api-quickstart">Checkout API quickstart</a> - accept payments from your app',
+              text: '<a href="/checkout-api-quickstart">Checkout API quickstart</a> - accept payments from your app',
               html: true,
             },
             {
-              text: '<a href="/docs/webhooks">Webhooks</a> - get notified when a payment completes',
+              text: '<a href="/webhooks">Webhooks</a> - get notified when a payment completes',
               html: true,
             },
             {
-              text: '<a href="/docs/quickstart">Quickstart</a> - onboard and pay out your first seller',
+              text: '<a href="/quickstart">Quickstart</a> - onboard and pay out your first seller',
               html: true,
             },
           ],

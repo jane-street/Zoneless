@@ -110,7 +110,7 @@ const DISCOUNT_PARAM_CHILDREN: Attribute[] = [
 const PRICE_EXPAND_TOOLTIP = {
   label: 'Expandable',
   content:
-    'This can be <a href="/docs/prices">expanded</a> into a full <code>Price</code> object with the <code>expand</code> request parameter.',
+    'This can be <a href="/prices">expanded</a> into a full <code>Price</code> object with the <code>expand</code> request parameter.',
 };
 
 const PRICE_DATA_CHILDREN: Attribute[] = [
@@ -559,7 +559,7 @@ const SUBSCRIPTION_ITEM_OBJECT_CHILDREN: Attribute[] = [
     type: 'string',
     tooltip: PRICE_EXPAND_TOOLTIP,
     description:
-      'The price the customer is subscribed to. See the <a href="/docs/prices">Prices API</a> for the full object shape.',
+      'The price the customer is subscribed to. See the <a href="/prices">Prices API</a> for the full object shape.',
   },
   {
     name: 'quantity',
@@ -1648,7 +1648,7 @@ export const SUBSCRIPTIONS_OVERVIEW_PAGE: DocPage = {
           type: 'callout',
           variant: 'info',
           title: 'Processing renewals: ',
-          text: 'Creating a subscription does not collect future cycle invoices on its own. Use the <a href="/docs/billing">Billing Helpers</a> API (<code>runForPlatform</code>) on a schedule—or enable the in-process billing monitor—to invoice and collect due subscriptions in USDC.',
+          text: 'Creating a subscription does not collect future cycle invoices on its own. Use the <a href="/billing">Billing Helpers</a> API (<code>runForPlatform</code>) on a schedule—or enable the in-process billing monitor—to invoice and collect due subscriptions in USDC.',
           html: true,
         },
         { type: 'heading', level: 2, text: 'Attributes' },

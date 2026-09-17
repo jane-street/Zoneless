@@ -10,7 +10,7 @@ export const API_QUICKSTART_PAGE: DocPage = {
       left: [
         {
           type: 'paragraph',
-          text: 'This guide uses the Zoneless Node.js SDK and Zoneless Cloud in live mode. Prefer the dashboard? Follow the <a href="/docs/quickstart">dashboard quickstart</a>. If you self-host, complete <a href="/docs/self-hosting">Self-hosting</a> first and replace the cloud API URL with your instance URL.',
+          text: 'This guide uses the Zoneless Node.js SDK and Zoneless Cloud in live mode. Prefer the dashboard? Follow the <a href="/quickstart">dashboard quickstart</a>. If you self-host, complete <a href="/self-hosting">Self-hosting</a> first and replace the cloud API URL with your instance URL.',
           html: true,
         },
         {
@@ -20,7 +20,7 @@ export const API_QUICKSTART_PAGE: DocPage = {
         },
         {
           type: 'paragraph',
-          text: 'Create a <a href="https://zoneless.com/login?view=signup">Zoneless account</a>, then copy your live secret key from the dashboard. It starts with <code>sk_live_z_</code>. Store it in an environment variable and only use it in server-side code. See <a href="/docs/authentication">Authentication</a> for test mode and self-hosted keys.',
+          text: 'Create a <a href="https://zoneless.com/login?view=signup">Zoneless account</a>, then copy your live secret key from the dashboard. It starts with <code>sk_live_z_</code>. Store it in an environment variable and only use it in server-side code. See <a href="/authentication">Authentication</a> for test mode and self-hosted keys.',
           html: true,
         },
       ],
@@ -153,7 +153,7 @@ console.log(account.id); // acct_z_1234...`,
         },
         {
           type: 'paragraph',
-          text: 'Create an <a href="/docs/account-links">Account Link</a> and redirect the seller to its <code>url</code>. They will add their details and connect the Solana wallet where they want to receive payouts.',
+          text: 'Create an <a href="/account-links">Account Link</a> and redirect the seller to its <code>url</code>. They will add their details and connect the Solana wallet where they want to receive payouts.',
           html: true,
         },
         {
@@ -207,12 +207,12 @@ console.log(accountLink.url);`,
         },
         {
           type: 'paragraph',
-          text: 'Do not create a payout as soon as the seller reaches your return URL. Retrieve the account and check that <code>payouts_enabled</code> is <code>true</code>. In production, listen for <a href="/docs/webhooks"><code>account.updated</code> webhooks</a> instead of polling.',
+          text: 'Do not create a payout as soon as the seller reaches your return URL. Retrieve the account and check that <code>payouts_enabled</code> is <code>true</code>. In production, listen for <a href="/webhooks"><code>account.updated</code> webhooks</a> instead of polling.',
           html: true,
         },
         {
           type: 'paragraph',
-          text: 'If you require identity verification before a seller can be paid, add the checks in the <a href="/docs/identity-verification">Identity Verification guide</a> before continuing.',
+          text: 'If you require identity verification before a seller can be paid, add the checks in the <a href="/identity-verification">Identity Verification guide</a> before continuing.',
           html: true,
         },
       ],
@@ -251,7 +251,7 @@ if (!onboardedAccount.payouts_enabled) {
         },
         {
           type: 'paragraph',
-          text: 'Your platform wallet must hold enough USDC to cover the transfer and payout. If it is empty, follow <a href="/docs/fund-platform-wallet">Fund your platform wallet</a> before continuing.',
+          text: 'Your platform wallet must hold enough USDC to cover the transfer and payout. If it is empty, follow <a href="/fund-platform-wallet">Fund your platform wallet</a> before continuing.',
           html: true,
         },
         {
@@ -272,7 +272,7 @@ if (!onboardedAccount.payouts_enabled) {
         },
         {
           type: 'paragraph',
-          text: 'Create a <a href="/docs/transfers">transfer</a> to credit the connected account\'s Zoneless balance. This updates the balances recorded by Zoneless, but it does not send USDC to the seller\'s wallet yet.',
+          text: 'Create a <a href="/transfers">transfer</a> to credit the connected account\'s Zoneless balance. This updates the balances recorded by Zoneless, but it does not send USDC to the seller\'s wallet yet.',
           html: true,
         },
       ],
@@ -319,7 +319,7 @@ console.log(transfer.id); // tr_z_1234...`,
         },
         {
           type: 'paragraph',
-          text: 'Create a <a href="/docs/payouts">payout</a> on behalf of the connected account. The <code>zonelessAccount</code> option is the SDK equivalent of the <code>Zoneless-Account</code> request header.',
+          text: 'Create a <a href="/payouts">payout</a> on behalf of the connected account. The <code>zonelessAccount</code> option is the SDK equivalent of the <code>Zoneless-Account</code> request header.',
           html: true,
         },
         {
@@ -372,7 +372,7 @@ console.log(payout.id); // po_z_1234...`,
         },
         {
           type: 'paragraph',
-          text: '<code>processAll()</code> processes every pending payout for the platform. Use <code>processBatch()</code> if you want to process one batch at a time. See <a href="/docs/payouts">Payouts</a> for both helpers and the lower-level signing flow.',
+          text: '<code>processAll()</code> processes every pending payout for the platform. Use <code>processBatch()</code> if you want to process one batch at a time. See <a href="/payouts">Payouts</a> for both helpers and the lower-level signing flow.',
           html: true,
         },
         {
@@ -440,23 +440,23 @@ curl "$ZONELESS_API_URL/v1/payouts/broadcast" \\
           type: 'list',
           items: [
             {
-              text: '<strong><a href="/docs/webhooks">Webhooks</a>:</strong> Handle <code>account.updated</code>, <code>transfer.created</code>, and <code>payout.paid</code>',
+              text: '<strong><a href="/webhooks">Webhooks</a>:</strong> Handle <code>account.updated</code>, <code>transfer.created</code>, and <code>payout.paid</code>',
               html: true,
             },
             {
-              text: '<strong><a href="/docs/idempotent-requests">Idempotent requests</a>:</strong> Prevent duplicate transfers and payouts when retrying requests',
+              text: '<strong><a href="/idempotent-requests">Idempotent requests</a>:</strong> Prevent duplicate transfers and payouts when retrying requests',
               html: true,
             },
             {
-              text: '<strong><a href="/docs/login-links">Login Links</a>:</strong> Give sellers access to the Express Dashboard',
+              text: '<strong><a href="/login-links">Login Links</a>:</strong> Give sellers access to the Express Dashboard',
               html: true,
             },
             {
-              text: '<strong><a href="/docs/connected-accounts">Connected Accounts</a>:</strong> Make requests on behalf of a seller',
+              text: '<strong><a href="/connected-accounts">Connected Accounts</a>:</strong> Make requests on behalf of a seller',
               html: true,
             },
             {
-              text: '<strong><a href="/docs/accounts">Accounts</a>, <a href="/docs/transfers">Transfers</a>, and <a href="/docs/payouts">Payouts</a>:</strong> Read the full API reference',
+              text: '<strong><a href="/accounts">Accounts</a>, <a href="/transfers">Transfers</a>, and <a href="/payouts">Payouts</a>:</strong> Read the full API reference',
               html: true,
             },
           ],

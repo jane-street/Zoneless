@@ -123,7 +123,7 @@ export const QUICKSTART_PAGE: DocPage = {
         },
         {
           type: 'paragraph',
-          text: 'In test mode, open <strong>Balance</strong>, click <strong>Add funds</strong>, and choose <strong>Add test USDC</strong>. In live mode, send real USDC to your platform wallet \u2014 see <a href="/docs/fund-platform-wallet" target="_blank" rel="noopener noreferrer"><strong>Fund your platform wallet</strong><img src="/assets/icons/open-in-new-tab.svg" alt="" class="external-link-icon" /></a>.',
+          text: 'In test mode, open <strong>Balance</strong>, click <strong>Add funds</strong>, and choose <strong>Add test USDC</strong>. In live mode, send real USDC to your platform wallet \u2014 see <a href="/fund-platform-wallet" target="_blank" rel="noopener noreferrer"><strong>Fund your platform wallet</strong><img src="/assets/icons/open-in-new-tab.svg" alt="" class="external-link-icon" /></a>.',
           html: true,
         },
       ],
@@ -290,15 +290,15 @@ export const QUICKSTART_PAGE: DocPage = {
           type: 'list',
           items: [
             {
-              text: '<a href="/docs/api-quickstart">API quickstart</a> - onboard and pay sellers from your app',
+              text: '<a href="/api-quickstart">API quickstart</a> - onboard and pay sellers from your app',
               html: true,
             },
             {
-              text: '<a href="/docs/connected-accounts">Connected accounts</a> - learn how platform requests work',
+              text: '<a href="/connected-accounts">Connected accounts</a> - learn how platform requests work',
               html: true,
             },
             {
-              text: '<a href="/docs/identity-verification">Identity verification</a> - require KYC before payouts',
+              text: '<a href="/identity-verification">Identity verification</a> - require KYC before payouts',
               html: true,
             },
           ],

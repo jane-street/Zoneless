@@ -59,7 +59,7 @@ export const LOGIN_LINKS_OVERVIEW_PAGE: DocPage = {
           type: 'callout',
           variant: 'info',
           title: 'Key concept: ',
-          text: 'Login links are for returning users who have already completed onboarding. For new accounts that need to complete onboarding, use <a href="/docs/account-links/object">Account Links</a> instead.',
+          text: 'Login links are for returning users who have already completed onboarding. For new accounts that need to complete onboarding, use <a href="/account-links/object">Account Links</a> instead.',
           html: true,
         },
         {

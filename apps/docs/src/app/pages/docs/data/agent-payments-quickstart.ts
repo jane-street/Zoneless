@@ -16,7 +16,7 @@ export const AGENT_PAYMENTS_QUICKSTART_PAGE: DocPage = {
           type: 'callout',
           variant: 'info',
           title: 'Paying sellers on a marketplace instead?',
-          text: 'Use the <a href="/docs/agent-marketplace-quickstart">Agent Marketplace Quickstart</a> when the goal is paying sellers out rather than collecting money from customers.',
+          text: 'Use the <a href="/agent-marketplace-quickstart">Agent Marketplace Quickstart</a> when the goal is paying sellers out rather than collecting money from customers.',
           html: true,
         },
         {
@@ -143,7 +143,7 @@ export const AGENT_PAYMENTS_QUICKSTART_PAGE: DocPage = {
         },
         {
           type: 'paragraph',
-          text: 'Follow that skill as the implementation and safety contract. Use <a href="https://zoneless.com/llms.txt">llms.txt</a> as an index and read resource pages such as <a href="/docs/prices/object">Prices</a>, <a href="/docs/checkout-sessions/object">Checkout Sessions</a>, and <a href="/docs/subscriptions/object">Subscriptions</a> only when implementing that resource or when blocked. Do not fetch the entire documentation set upfront.',
+          text: 'Follow that skill as the implementation and safety contract. Use <a href="https://docs.zoneless.com/llms.txt">llms.txt</a> as an index and read resource pages such as <a href="/prices/object">Prices</a>, <a href="/checkout-sessions/object">Checkout Sessions</a>, and <a href="/subscriptions/object">Subscriptions</a> only when implementing that resource or when blocked. Do not fetch the entire documentation set upfront.',
           html: true,
         },
       ],

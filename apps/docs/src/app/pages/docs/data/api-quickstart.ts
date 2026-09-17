@@ -11,7 +11,7 @@ export const CHECKOUT_API_QUICKSTART_PAGE: DocPage = {
       left: [
         {
           type: 'paragraph',
-          text: 'Prefer no code? Use the <a href="/docs/payment-link-quickstart">Payment Links quickstart</a>. Self-hosting? Complete the <a href="/docs/self-hosting">Self-hosting</a> guide first, then continue from <strong>Install the SDK</strong> using your instance URL instead of <code>https://api.zoneless.com</code>.',
+          text: 'Prefer no code? Use the <a href="/payment-link-quickstart">Payment Links quickstart</a>. Self-hosting? Complete the <a href="/self-hosting">Self-hosting</a> guide first, then continue from <strong>Install the SDK</strong> using your instance URL instead of <code>https://api.zoneless.com</code>.',
           html: true,
         },
         {
@@ -155,7 +155,7 @@ console.log(session.url);`,
         },
         {
           type: 'paragraph',
-          text: 'Redirect your customer to <code>session.url</code>. They complete Checkout with their Solana wallet and pay in USDC. Settlement typically confirms in seconds. See <a href="/docs/checkout-sessions">Checkout Sessions</a> for the full API.',
+          text: 'Redirect your customer to <code>session.url</code>. They complete Checkout with their Solana wallet and pay in USDC. Settlement typically confirms in seconds. See <a href="/checkout-sessions">Checkout Sessions</a> for the full API.',
           html: true,
         },
       ],
@@ -171,19 +171,19 @@ console.log(session.url);`,
           type: 'list',
           items: [
             {
-              text: '<strong><a href="/docs/webhooks">Webhooks</a>:</strong> Listen for <code>checkout.session.completed</code> and fulfill the order',
+              text: '<strong><a href="/webhooks">Webhooks</a>:</strong> Listen for <code>checkout.session.completed</code> and fulfill the order',
               html: true,
             },
             {
-              text: '<strong><a href="/docs/payment-links">Payment Links</a>:</strong> Create shareable links via the API or dashboard',
+              text: '<strong><a href="/payment-links">Payment Links</a>:</strong> Create shareable links via the API or dashboard',
               html: true,
             },
             {
-              text: '<strong><a href="/docs/subscriptions">Subscriptions</a>:</strong> Recurring USDC billing with invoices',
+              text: '<strong><a href="/subscriptions">Subscriptions</a>:</strong> Recurring USDC billing with invoices',
               html: true,
             },
             {
-              text: '<strong><a href="/docs/api-quickstart">API quickstart</a>:</strong> Onboard sellers and pay them out with Connect',
+              text: '<strong><a href="/api-quickstart">API quickstart</a>:</strong> Onboard sellers and pay them out with Connect',
               html: true,
             },
           ],

@@ -59,7 +59,7 @@ const PRODUCT_ATTRIBUTES: Attribute[] = [
     tooltip: {
       label: 'Expandable',
       content:
-        'This can be <a href="/docs/expanding_objects">expanded</a> into an object with the <code>expand</code> request parameter.',
+        'This can be <a href="/expanding_objects">expanded</a> into an object with the <code>expand</code> request parameter.',
     },
     description:
       'The ID of the Price object that is the default price for this product.',
@@ -329,7 +329,7 @@ const CREATE_PRODUCT_MORE_PARAMETERS: Attribute[] = [
     name: 'default_price_data',
     type: 'object',
     description:
-      'Data used to generate a new Price object. This Price will be set as the default price for this product. See the <a href="/docs/prices/create">Create a price</a> page for what parameters are available.',
+      'Data used to generate a new Price object. This Price will be set as the default price for this product. See the <a href="/prices/create">Create a price</a> page for what parameters are available.',
   },
   {
     name: 'images',

@@ -9,7 +9,7 @@ export const LOCAL_DEVELOPMENT_PAGE: DocPage = {
       left: [
         {
           type: 'paragraph',
-          text: 'Start with the <a href="/docs/self-hosting">Self-hosting guide</a>. The default Docker setup runs in test mode with simulated USDC.',
+          text: 'Start with the <a href="/self-hosting">Self-hosting guide</a>. The default Docker setup runs in test mode with simulated USDC.',
           html: true,
         },
         { type: 'heading', level: 2, text: 'Local URLs' },
@@ -78,7 +78,7 @@ export const LOCAL_DEVELOPMENT_PAGE: DocPage = {
         },
         {
           type: 'paragraph',
-          text: 'For live mode, follow <a href="/docs/fund-platform-wallet">Fund your platform wallet</a>.',
+          text: 'For live mode, follow <a href="/fund-platform-wallet">Fund your platform wallet</a>.',
           html: true,
         },
         {
@@ -132,7 +132,7 @@ export const LOCAL_DEVELOPMENT_PAGE: DocPage = {
         },
         {
           type: 'paragraph',
-          text: 'See <a href="/docs/webhooks">Webhooks</a> for endpoint setup and signature verification.',
+          text: 'See <a href="/webhooks">Webhooks</a> for endpoint setup and signature verification.',
           html: true,
         },
       ],
@@ -183,11 +183,11 @@ http://host.docker.internal:4242/webhook`,
           type: 'list',
           items: [
             {
-              text: '<strong><a href="/docs/environment-variables">Environment variables</a>:</strong> Change local defaults',
+              text: '<strong><a href="/environment-variables">Environment variables</a>:</strong> Change local defaults',
               html: true,
             },
             {
-              text: '<strong><a href="/docs/deployment">Deployment</a>:</strong> Run Zoneless on a server',
+              text: '<strong><a href="/deployment">Deployment</a>:</strong> Run Zoneless on a server',
               html: true,
             },
           ],

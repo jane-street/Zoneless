@@ -7,7 +7,7 @@ const zoneless = new Zoneless('sk_live_z_YOUR_API_KEY', 'https://api.zoneless.co
 export const EXPAND_TOOLTIP: AttributeTooltip = {
   label: 'Expandable',
   content:
-    'This can be <a href="/docs/expanding_objects">expanded</a> into an object with the <code>expand</code> request parameter.',
+    'This can be <a href="/expanding_objects">expanded</a> into an object with the <code>expand</code> request parameter.',
 };
 
 /**
