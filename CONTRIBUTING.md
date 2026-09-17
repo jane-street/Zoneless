@@ -6,7 +6,7 @@ The goal is to stay open source through the whole stack: the payment rail, the b
 
 We only take on external dependencies where something cannot reasonably be open sourced today. Card networks are the usual example: accepting a Visa or Mastercard payment is not something we can currently do with an open stack, so that kind of integration stays optional and at the edges.
 
-If you have a question, [join the Discord](https://discord.gg/mdMQJug9mG) or open a [GitHub issue](https://github.com/zonelessdev/zoneless/issues). Product docs, API reference, and self-hosting live at [zoneless.com/docs](https://zoneless.com/docs).
+If you have a question, [join the Discord](https://discord.gg/mdMQJug9mG) or open a [GitHub issue](https://github.com/zonelessdev/zoneless/issues). Product docs, API reference, and self-hosting live at [zoneless.com/docs](https://zoneless.com/docs) and can be edited in this repo under [`apps/docs`](apps/docs).
 
 This project is governed by our [Code of Conduct](CODE_OF_CONDUCT.md). By participating, you are expected to uphold it.
 
@@ -52,6 +52,7 @@ npm install
 docker compose up -d        # MongoDB
 npx nx serve api            # API on :3333
 npx nx serve web            # Dashboard on :4203
+npx nx serve docs           # Docs on :4205
 ```
 
 Or run the API and dashboard together:
@@ -69,8 +70,10 @@ Test mode uses simulated funds by default (`SETTLEMENT_RAIL=simulated`). To exer
 ```bash
 npx nx test api
 npx nx test web
+npx nx test docs
 npx nx lint api --fix
 npx nx lint web --fix
+npx nx lint docs --fix
 npm run format
 ```
 
@@ -80,7 +83,7 @@ CI also runs `npm run format:check` and `npx nx run-many --target=test --all`. R
 
 1. Branch from `main`. Name the branch whatever describes the change (`fix-payout-status`, `account-link-return-url`, and so on). A `feature/` prefix is not required.
 2. Keep the change small and focused on one goal.
-3. Add tests for the behaviour you changed.
+3. Add tests for the behaviour you changed. If the change affects a public API, dashboard flow, or self-hosting step, update the matching page in [`apps/docs`](apps/docs).
 4. Follow the existing structure, naming, and formatting. Reuse styles from the styles folder rather than introducing new ones. Remove code that your change makes unused.
 5. Use comments only where the code cannot say it clearly.
 6. Fill out the PR template so reviewers know what changed and how you tested it.

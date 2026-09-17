@@ -16,6 +16,7 @@
     "dev": "docker compose up mongodb mongo-express -d && nx run-many -t serve -p api web --output-style=stream",
     "start:api": "nx serve api",
     "start:web": "nx serve web",
+    "start:docs": "nx serve docs",
     "start:db": "docker compose up mongodb mongo-express -d",
     "prod": "docker compose --env-file .env.production up -d --build",
     "stop:db": "docker compose down",

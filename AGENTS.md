@@ -2,7 +2,9 @@
 
 Zoneless is an open-source, Stripe-compatible payments platform that uses USDC on Solana. Platforms like marketplaces can self-host their own instance.
 
-This is an Nx monorepo with an Angular frontend (dashboard, checkout, and connected-account onboarding) and an Express API.
+This is an Nx monorepo with an Angular frontend (dashboard, checkout, connected-account onboarding, and docs) and an Express API.
+
+Public product docs live in [`apps/docs`](apps/docs). Serve them with `npx nx serve docs` and update them in the same PR as the API or dashboard behaviour they describe. Edit the TypeScript page trees, not generated Markdown.
 
 ## Design
 

@@ -165,6 +165,7 @@ npm install
 docker compose up -d        # MongoDB
 npx nx serve api            # API on :3333
 npx nx serve web            # Dashboard on :4203
+npx nx serve docs           # Docs on :4205
 ```
 
 Or run everything at once:
@@ -178,6 +179,7 @@ npm run dev
 ```bash
 npx nx test api
 npx nx test web
+npx nx test docs
 ```
 
 ## Project structure
@@ -187,6 +189,7 @@ zoneless/
 ├── apps/
 │   ├── api/              # Express.js API backend
 │   ├── web/              # Angular dashboard, checkout and onboarding
+│   ├── docs/             # Public product docs and API reference
 │   └── cli/              # Cli for humans and agents
 ├── libs/
 │   ├── shared-types/     # Shared TypeScript interfaces
