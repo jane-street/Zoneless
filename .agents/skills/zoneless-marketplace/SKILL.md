@@ -40,8 +40,8 @@ assume prior wallet or blockchain experience.
 
 ## Read documentation just in time
 
-Start with `https://zoneless.com/docs/api-quickstart.md`. Use
-`https://zoneless.com/llms.txt` as an index and read a resource page only when
+Start with `https://docs.zoneless.com/api-quickstart.md`. Use
+`https://docs.zoneless.com/llms.txt` as an index and read a resource page only when
 implementing that resource or when blocked. Do not fetch the entire docs set
 upfront.
 
@@ -370,7 +370,7 @@ Report:
   `secretKeyBase58` value as `SOLANA_SECRET_KEY` in the deployment secret
   manager;
 - that the human must follow
-  `https://zoneless.com/docs/fund-platform-wallet.md` to fund the platform
+  `https://docs.zoneless.com/fund-platform-wallet.md` to fund the platform
   wallet with enough USDC for seller payouts and a small amount of SOL for
   Solana network fees;
 - that the human must explicitly approve any live rollout.

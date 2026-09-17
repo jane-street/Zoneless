@@ -42,10 +42,10 @@ the opposite.
 
 ## Read documentation just in time
 
-Start with `https://zoneless.com/docs/subscriptions.md` for the recurring
-billing API, `https://zoneless.com/docs/checkout-api-quickstart.md` for checkout
-request and response shapes, and `https://zoneless.com/docs/webhooks.md` when
-wiring lifecycle events. Use `https://zoneless.com/llms.txt` as an index and
+Start with `https://docs.zoneless.com/subscriptions.md` for the recurring
+billing API, `https://docs.zoneless.com/checkout-api-quickstart.md` for checkout
+request and response shapes, and `https://docs.zoneless.com/webhooks.md` when
+wiring lifecycle events. Use `https://docs.zoneless.com/llms.txt` as an index and
 read a resource page only when implementing that resource or when blocked. Do
 not fetch the entire docs set upfront.
 

@@ -8,7 +8,7 @@
     "url": "git+https://github.com/zonelessdev/zoneless.git",
     "directory": "apps/cli"
   },
-  "homepage": "https://zoneless.com/docs/agent-quickstart",
+  "homepage": "https://docs.zoneless.com/agent-payments-quickstart",
   "publishConfig": {
     "access": "public"
   },

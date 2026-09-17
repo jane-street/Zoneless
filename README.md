@@ -11,7 +11,7 @@
 </p>
 
 <p align="center">
-  <a href="https://zoneless.com/docs">Docs</a> &middot;
+  <a href="https://docs.zoneless.com">Docs</a> &middot;
   <a href="https://zoneless.com">Website</a> &middot;
   <a href="https://zoneless.com/#live-demo">Demo</a> &middot;
   <a href="https://discord.gg/mdMQJug9mG">Discord</a>
@@ -35,7 +35,7 @@ It includes checkout, subscriptions, marketplace accounts, and payouts through a
 Manage payments, customers, products, subscriptions, connected accounts, and balances from one place.
 
 <p align="center">
-  <a href="https://zoneless.com/docs/platform-dashboard">
+  <a href="https://docs.zoneless.com/platform-dashboard">
     <img src="https://zoneless.com/assets/images/screenshots/hero-dashboard.webp" alt="Zoneless platform dashboard" width="700" />
   </a>
 </p>
@@ -45,7 +45,7 @@ Manage payments, customers, products, subscriptions, connected accounts, and bal
 Create products and payment links, then let customers pay with USDC through hosted checkout.
 
 <p align="center">
-  <a href="https://zoneless.com/docs/payment-link-quickstart">
+  <a href="https://docs.zoneless.com/payment-link-quickstart">
     <img src="https://zoneless.com/assets/images/screenshots/checkout.webp" alt="Zoneless hosted checkout" width="700" />
   </a>
 </p>
@@ -55,7 +55,7 @@ Create products and payment links, then let customers pay with USDC through host
 Manage payments, subscription charges, payouts, refunds, and other balance activity.
 
 <p align="center">
-  <a href="https://zoneless.com/docs/platform-dashboard">
+  <a href="https://docs.zoneless.com/platform-dashboard">
     <img src="https://zoneless.com/assets/images/screenshots/transactions.webp" alt="Payment activity in the Zoneless dashboard" width="700" />
   </a>
 </p>
@@ -65,7 +65,7 @@ Manage payments, subscription charges, payouts, refunds, and other balance activ
 Manage recurring payments, invoices, and subscription status.
 
 <p align="center">
-  <a href="https://zoneless.com/docs/subscriptions">
+  <a href="https://docs.zoneless.com/subscriptions">
     <img src="https://zoneless.com/assets/images/screenshots/subscriptions.webp" alt="Subscriptions in the Zoneless dashboard" width="700" />
   </a>
 </p>
@@ -75,7 +75,7 @@ Manage recurring payments, invoices, and subscription status.
 Onboard sellers to your marketplace via a hosted flow where they can enter their details and connect a wallet.
 
 <p align="center">
-  <a href="https://zoneless.com/docs/quickstart">
+  <a href="https://docs.zoneless.com/quickstart">
     <img src="https://zoneless.com/assets/images/screenshots/onboard.webp" alt="Zoneless connected account onboarding" width="700" />
   </a>
 </p>
@@ -85,7 +85,7 @@ Onboard sellers to your marketplace via a hosted flow where they can enter their
 Set verification rules and review sellers who need an identity check.
 
 <p align="center">
-  <a href="https://zoneless.com/docs/identity-verification">
+  <a href="https://docs.zoneless.com/identity-verification">
     <img src="https://zoneless.com/assets/images/screenshots/kyc-hero.webp" alt="Seller identity verification in Zoneless" width="700" />
   </a>
 </p>
@@ -127,7 +127,7 @@ const session = await client.checkout.sessions.create({
 });
 ```
 
-The API covers checkout, subscriptions, and marketplace payouts. See the [API reference](https://zoneless.com/docs) for the full list of resources and endpoints.
+The API covers checkout, subscriptions, and marketplace payouts. See the [API reference](https://docs.zoneless.com) for the full list of resources and endpoints.
 
 ## Running in production
 
@@ -143,18 +143,18 @@ docker compose up -d
 
 Open [localhost/setup](http://localhost/setup) to create your platform account and API key.
 
-See the [self-hosting guide](https://zoneless.com/docs/self-hosting) for configuration, credentials, and deployment options.
+See the [self-hosting guide](https://docs.zoneless.com/self-hosting) for configuration, credentials, and deployment options.
 
 ## Guides and documentation
 
-The full API reference is at **[zoneless.com/docs](https://zoneless.com/docs)**. These guides are good places to start:
+The full API reference is at **[docs.zoneless.com](https://docs.zoneless.com)**. These guides are good places to start:
 
-- [Accept your first stablecoin payment](https://zoneless.com/docs/payment-link-quickstart)
-- [Create a Checkout Session with the API](https://zoneless.com/docs/checkout-api-quickstart)
-- [Onboard a seller and send a payout](https://zoneless.com/docs/quickstart)
+- [Accept your first stablecoin payment](https://docs.zoneless.com/payment-link-quickstart)
+- [Create a Checkout Session with the API](https://docs.zoneless.com/checkout-api-quickstart)
+- [Onboard a seller and send a payout](https://docs.zoneless.com/quickstart)
 - [Run Stripe and Zoneless side by side](https://zoneless.com/blog/run-stripe-and-zoneless-side-by-side)
 - [Onboard sellers outside Stripe Connect's supported regions](https://zoneless.com/blog/onboard-sellers-stripe-connect-doesnt-support)
-- [Move an existing Stripe Connect payout flow](https://zoneless.com/docs/migrate-from-stripe)
+- [Move an existing Stripe Connect payout flow](https://docs.zoneless.com/migrate-from-stripe)
 
 For a product overview, see [marketplace payouts](https://zoneless.com) or [USDC checkout and subscriptions](https://zoneless.com/payments).
 

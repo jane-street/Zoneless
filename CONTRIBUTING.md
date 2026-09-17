@@ -6,7 +6,7 @@ The goal is to stay open source through the whole stack: the payment rail, the b
 
 We only take on external dependencies where something cannot reasonably be open sourced today. Card networks are the usual example: accepting a Visa or Mastercard payment is not something we can currently do with an open stack, so that kind of integration stays optional and at the edges.
 
-If you have a question, [join the Discord](https://discord.gg/mdMQJug9mG) or open a [GitHub issue](https://github.com/zonelessdev/zoneless/issues). Product docs, API reference, and self-hosting live at [zoneless.com/docs](https://zoneless.com/docs) and can be edited in this repo under [`apps/docs`](apps/docs).
+If you have a question, [join the Discord](https://discord.gg/mdMQJug9mG) or open a [GitHub issue](https://github.com/zonelessdev/zoneless/issues). Product docs, API reference, and self-hosting live at [docs.zoneless.com](https://docs.zoneless.com) and can be edited in this repo under [`apps/docs`](apps/docs).
 
 This project is governed by our [Code of Conduct](CODE_OF_CONDUCT.md). By participating, you are expected to uphold it.
 
@@ -30,7 +30,7 @@ Please do not open one huge pull request of untested, AI-generated code. Small, 
 
 The API should match Stripe.
 
-If you are unsure how a resource, field, webhook, or object should look, check the [Stripe docs](https://docs.stripe.com/api) and follow that structure: field names, object shapes, emitted events, and behaviour. Zoneless uses USDC on Solana instead of cards and bank accounts, but the programming model should feel like Stripe. See the [API reference](https://zoneless.com/docs) and [migrating from Stripe](https://zoneless.com/docs/migrate-from-stripe) for how that mapping works in this project.
+If you are unsure how a resource, field, webhook, or object should look, check the [Stripe docs](https://docs.stripe.com/api) and follow that structure: field names, object shapes, emitted events, and behaviour. Zoneless uses USDC on Solana instead of cards and bank accounts, but the programming model should feel like Stripe. See the [API reference](https://docs.zoneless.com) and [migrating from Stripe](https://docs.zoneless.com/migrate-from-stripe) for how that mapping works in this project.
 
 ## Other ways to contribute
 
@@ -61,7 +61,7 @@ Or run the API and dashboard together:
 npm run dev
 ```
 
-To run the full Docker stack instead (API, dashboard, and database behind one local URL), follow the [self-hosting](https://zoneless.com/docs/self-hosting) and [local development](https://zoneless.com/docs/local-development) guides.
+To run the full Docker stack instead (API, dashboard, and database behind one local URL), follow the [self-hosting](https://docs.zoneless.com/self-hosting) and [local development](https://docs.zoneless.com/local-development) guides.
 
 Test mode uses simulated funds by default (`SETTLEMENT_RAIL=simulated`). To exercise Solana Devnet, set `LIVEMODE=false` and `SETTLEMENT_RAIL=onchain`.
 

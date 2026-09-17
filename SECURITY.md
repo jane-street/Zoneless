@@ -39,7 +39,7 @@ Please include the following information in your report:
 
 ## Security Best Practices for Self-Hosting
 
-See the [Deployment Guide](https://zoneless.com/docs/deployment) for full production setup instructions.
+See the [Deployment Guide](https://docs.zoneless.com/deployment) for full production setup instructions.
 
 Key points:
 

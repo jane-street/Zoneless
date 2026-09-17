@@ -72,7 +72,7 @@ export type ListTopUpsQuery = z.infer<typeof ListTopUpsQuerySchema>;
 
 /**
  * SDK input type for listing top-ups.
- * @see https://zoneless.com/docs/topups/list
+ * @see https://docs.zoneless.com/topups/list
  */
 export interface ListTopUpsInput {
   /** Number of results to return (1-100, default: 10) */

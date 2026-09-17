@@ -126,7 +126,7 @@ function LogSecurityWarnings(): void {
     console.log(
       '   For production deployments, set APP_SECRET in your .env file.'
     );
-    console.log('   See https://zoneless.com/docs/deployment for details.');
+    console.log('   See https://docs.zoneless.com/deployment for details.');
     console.log('');
   }
 }
