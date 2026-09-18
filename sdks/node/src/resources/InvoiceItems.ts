@@ -5,12 +5,12 @@ import {
   InvoiceItemDeleted,
   ListResponse,
 } from '@zoneless/shared-types';
-import {
+import type {
   CreateInvoiceItemInput,
   ListInvoiceItemsInput,
   RetrieveInvoiceItemInput,
   UpdateInvoiceItemInput,
-} from '@zoneless/shared-schemas';
+} from '../generated/Inputs';
 
 /**
  * @see https://zoneless.com/docs/invoiceitems

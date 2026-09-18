@@ -1,6 +1,6 @@
 import { BaseResource } from './Base';
 import { AccountLink } from '@zoneless/shared-types';
-import { CreateAccountLinkInput } from '@zoneless/shared-schemas';
+import type { CreateAccountLinkInput } from '../generated/Inputs';
 /**
  * @see https://zoneless.com/docs/account-links
  */

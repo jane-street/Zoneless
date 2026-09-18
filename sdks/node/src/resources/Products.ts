@@ -1,12 +1,12 @@
 import { BaseResource } from './Base';
 import { ApplyDateFilter, type ListQuery } from '../utils';
 import { Product, ProductDeleted, ListResponse } from '@zoneless/shared-types';
-import {
+import type {
   RetrieveProductInput,
   CreateProductInput,
   UpdateProductInput,
   ListProductsInput,
-} from '@zoneless/shared-schemas';
+} from '../generated/Inputs';
 
 /**
  * @see https://zoneless.com/docs/products

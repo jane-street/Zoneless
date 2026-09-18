@@ -1,10 +1,10 @@
 import { BaseResource } from './Base';
 import { ExternalWallet, ListResponse } from '@zoneless/shared-types';
-import {
+import type {
   CreateExternalWalletInput,
   UpdateExternalWalletInput,
   ListExternalWalletsInput,
-} from '@zoneless/shared-schemas';
+} from '../generated/Inputs';
 /** Response returned when an external wallet is deleted */
 export interface ExternalWalletDeletedResponse {
   id: string;

@@ -5,12 +5,12 @@ import {
   CustomerDeleted,
   ListResponse,
 } from '@zoneless/shared-types';
-import {
+import type {
   CreateCustomerInput,
   UpdateCustomerInput,
   ListCustomersInput,
   RetrieveCustomerInput,
-} from '@zoneless/shared-schemas';
+} from '../generated/Inputs';
 
 /**
  * @see https://zoneless.com/docs/customers

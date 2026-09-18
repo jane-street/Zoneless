@@ -11,6 +11,6 @@ export default defineConfig({
   treeshake: true,
   minify: false,
   tsconfig: 'sdks/node/tsconfig.lib.json',
-  noExternal: ['@zoneless/shared-types', '@zoneless/shared-schemas'],
-  external: ['@solana/web3.js', 'bs58', 'libphonenumber-js', 'zod'],
+  noExternal: ['@zoneless/shared-types'],
+  external: ['@solana/web3.js', 'bs58'],
 });

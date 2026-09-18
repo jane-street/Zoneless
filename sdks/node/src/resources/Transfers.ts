@@ -2,11 +2,11 @@ import { BaseResource } from './Base';
 import { RequestExtraOptions } from '../HttpClient';
 import { ApplyDateFilter } from '../utils';
 import { Transfer, ListResponse } from '@zoneless/shared-types';
-import {
+import type {
   CreateTransferInput,
   UpdateTransferInput,
   ListTransfersInput,
-} from '@zoneless/shared-schemas';
+} from '../generated/Inputs';
 
 /**
  * @see https://zoneless.com/docs/transfers

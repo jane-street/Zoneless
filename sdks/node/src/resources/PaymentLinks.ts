@@ -4,13 +4,13 @@ import {
   CheckoutSessionLineItem,
   ListResponse,
 } from '@zoneless/shared-types';
-import {
+import type {
   CreatePaymentLinkInput,
   ListPaymentLinkLineItemsInput,
   ListPaymentLinksInput,
   RetrievePaymentLinkInput,
   UpdatePaymentLinkInput,
-} from '@zoneless/shared-schemas';
+} from '../generated/Inputs';
 /**
  * @see https://zoneless.com/docs/payment_links
  */

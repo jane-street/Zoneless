@@ -6,14 +6,14 @@ import {
   CheckoutSessionLineItem,
   ListResponse,
 } from '@zoneless/shared-types';
-import {
+import type {
   CreateCheckoutSessionInput,
   UpdateCheckoutSessionInput,
   ListCheckoutSessionsInput,
   RetrieveCheckoutSessionInput,
   ExpireCheckoutSessionInput,
   ListCheckoutSessionLineItemsInput,
-} from '@zoneless/shared-schemas';
+} from '../generated/Inputs';
 
 /**
  * @see https://zoneless.com/docs/checkout/sessions

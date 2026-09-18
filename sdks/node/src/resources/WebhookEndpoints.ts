@@ -4,11 +4,11 @@ import {
   WebhookEndpointDeletedResponse,
   ListResponse,
 } from '@zoneless/shared-types';
-import {
+import type {
   CreateWebhookEndpointInput,
   UpdateWebhookEndpointInput,
   ListWebhookEndpointsInput,
-} from '@zoneless/shared-schemas';
+} from '../generated/Inputs';
 /**
  * @see https://zoneless.com/docs/webhook-endpoints
  */

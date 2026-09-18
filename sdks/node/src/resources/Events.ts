@@ -1,7 +1,7 @@
 import { BaseResource } from './Base';
 import { ApplyDateFilter } from '../utils';
 import { Event, ListResponse } from '@zoneless/shared-types';
-import { ListEventsInput } from '@zoneless/shared-schemas';
+import type { ListEventsInput } from '../generated/Inputs';
 
 /**
  * @see https://zoneless.com/docs/events

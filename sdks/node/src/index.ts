@@ -172,4 +172,3 @@ export { ZonelessApiError } from './HttpClient';
 export type { RequestExtraOptions } from './HttpClient';
 export { WebhookSignatureVerificationError } from './resources/Webhooks';
 export * from '@zoneless/shared-types';
-export * from '@zoneless/shared-schemas';

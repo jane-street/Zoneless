@@ -9,7 +9,7 @@ import {
   PersonDeleted,
   LoginLink,
 } from '@zoneless/shared-types';
-import {
+import type {
   CreateAccountInput,
   UpdateAccountInput,
   ListAccountsInput,
@@ -20,7 +20,7 @@ import {
   CreatePersonInput,
   UpdatePersonInput,
   ListPersonsInput,
-} from '@zoneless/shared-schemas';
+} from '../generated/Inputs';
 import {
   ExternalAccounts,
   ExternalWalletDeletedResponse,

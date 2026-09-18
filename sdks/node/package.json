@@ -1,6 +1,6 @@
 {
   "name": "@zoneless/node",
-  "version": "0.1.10",
+  "version": "0.1.11",
   "description": "Zoneless SDK for Node.js",
   "license": "Apache-2.0",
   "repository": {
@@ -45,8 +45,6 @@
   },
   "dependencies": {
     "@solana/web3.js": "^1.98.4",
-    "bs58": "^6.0.0",
-    "libphonenumber-js": "^1.13.10",
-    "zod": "^4.4.3"
+    "bs58": "^6.0.0"
   }
 }

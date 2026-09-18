@@ -5,14 +5,14 @@ import {
   PaymentIntentAmountDetailsLineItem,
   ListResponse,
 } from '@zoneless/shared-types';
-import {
+import type {
   CancelPaymentIntentInput,
   CreatePaymentIntentInput,
   ListPaymentIntentLineItemsInput,
   ListPaymentIntentsInput,
   RetrievePaymentIntentInput,
   UpdatePaymentIntentInput,
-} from '@zoneless/shared-schemas';
+} from '../generated/Inputs';
 
 /**
  * @see https://zoneless.com/docs/payment_intents

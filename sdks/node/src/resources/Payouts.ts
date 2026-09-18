@@ -10,13 +10,13 @@ import {
   ProcessPendingResult,
   ListResponse,
 } from '@zoneless/shared-types';
-import {
+import type {
   CreatePayoutInput,
   UpdatePayoutInput,
   ListPayoutsInput,
   BuildPayoutsBatchInput,
   BroadcastPayoutsBatchInput,
-} from '@zoneless/shared-schemas';
+} from '../generated/Inputs';
 
 /**
  * @see https://zoneless.com/docs/payouts

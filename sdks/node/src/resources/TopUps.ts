@@ -5,11 +5,11 @@ import {
   CheckDepositsResponse,
   ListResponse,
 } from '@zoneless/shared-types';
-import {
+import type {
   CreateTopUpInput,
   UpdateTopUpInput,
   ListTopUpsInput,
-} from '@zoneless/shared-schemas';
+} from '../generated/Inputs';
 
 /**
  * @see https://zoneless.com/docs/topups

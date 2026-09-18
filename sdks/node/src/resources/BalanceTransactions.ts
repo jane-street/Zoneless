@@ -1,7 +1,7 @@
 import { BaseResource } from './Base';
 import { ApplyDateFilter } from '../utils';
 import { BalanceTransaction, ListResponse } from '@zoneless/shared-types';
-import { ListBalanceTransactionsInput } from '@zoneless/shared-schemas';
+import type { ListBalanceTransactionsInput } from '../generated/Inputs';
 
 export interface BalanceTransactionRequestOptions {
   /** Connected account ID to retrieve/list balance transactions for */

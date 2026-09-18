@@ -1,4 +1,4 @@
-import { Zoneless, RunBillingForPlatformSchema } from './index';
+import { Zoneless } from './index';
 
 describe('Zoneless', () => {
   const originalFetch = global.fetch;
@@ -15,13 +15,6 @@ describe('Zoneless', () => {
     expect(() => new Zoneless('sk_test_z_key', '')).toThrow(
       /base URL is required/
     );
-  });
-
-  it('re-exports shared request schemas', () => {
-    expect(RunBillingForPlatformSchema.parse({})).toEqual({});
-    expect(RunBillingForPlatformSchema.parse({ batch_size: 25 })).toEqual({
-      batch_size: 25,
-    });
   });
 
   it('posts a platform billing run through the shared client', async () => {

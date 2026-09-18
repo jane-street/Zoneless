@@ -1,7 +1,7 @@
 import { BaseResource } from './Base';
 import { ApplyDateFilter } from '../utils';
 import { Invoice, InvoiceDeleted, ListResponse } from '@zoneless/shared-types';
-import {
+import type {
   CreateInvoiceInput,
   FinalizeInvoiceInput,
   ListInvoicesInput,
@@ -10,7 +10,7 @@ import {
   RetrieveInvoiceInput,
   UpdateInvoiceInput,
   VoidInvoiceInput,
-} from '@zoneless/shared-schemas';
+} from '../generated/Inputs';
 
 /**
  * @see https://zoneless.com/docs/invoices

@@ -1,10 +1,10 @@
 import { BaseResource } from './Base';
 import { Person, PersonDeleted, ListResponse } from '@zoneless/shared-types';
-import {
+import type {
   CreatePersonInput,
   UpdatePersonInput,
   ListPersonsInput,
-} from '@zoneless/shared-schemas';
+} from '../generated/Inputs';
 /**
  * Persons API resource.
  * Persons represent individuals associated with an account's legal entity.

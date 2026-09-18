@@ -1,6 +1,6 @@
 import { BaseResource } from './Base';
 import { BillingMonitorStatus, BillingRun } from '@zoneless/shared-types';
-import { RunBillingForPlatformInput } from '@zoneless/shared-schemas';
+import type { RunBillingForPlatformInput } from '../generated/Inputs';
 /**
  * Zoneless billing helpers for recurring subscription collection.
  *

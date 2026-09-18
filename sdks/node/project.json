@@ -10,7 +10,7 @@
       "executor": "nx:run-commands",
       "outputs": ["{projectRoot}/dist"],
       "options": {
-        "command": "tsup --config sdks/node/tsup.config.ts && node sdks/node/scripts/assert-bundled-dts.mjs"
+        "command": "npx tsx sdks/node/scripts/generate-inputs.ts && npx prettier --write sdks/node/src/generated/Inputs.ts && tsup --config sdks/node/tsup.config.ts && node sdks/node/scripts/assert-bundled-dts.mjs"
       }
     },
     "pack": {

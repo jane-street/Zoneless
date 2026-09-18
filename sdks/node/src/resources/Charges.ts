@@ -1,13 +1,13 @@
 import { BaseResource } from './Base';
 import { ApplyDateFilter } from '../utils';
 import { Charge, ListResponse } from '@zoneless/shared-types';
-import {
+import type {
   CaptureChargeInput,
   CreateChargeInput,
   ListChargesInput,
   RetrieveChargeInput,
   UpdateChargeInput,
-} from '@zoneless/shared-schemas';
+} from '../generated/Inputs';
 
 /**
  * @see https://zoneless.com/docs/charges

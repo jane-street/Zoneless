@@ -1,7 +1,7 @@
 import { BaseResource } from './Base';
 import { ApplyDateFilter } from '../utils';
 import { Subscription, ListResponse } from '@zoneless/shared-types';
-import {
+import type {
   CancelSubscriptionInput,
   CreateSubscriptionInput,
   ListSubscriptionsInput,
@@ -9,7 +9,7 @@ import {
   ResumeSubscriptionInput,
   RetrieveSubscriptionInput,
   UpdateSubscriptionInput,
-} from '@zoneless/shared-schemas';
+} from '../generated/Inputs';
 
 /**
  * @see https://zoneless.com/docs/subscriptions
