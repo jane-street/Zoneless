@@ -174,7 +174,7 @@ export class Docs implements OnInit, OnDestroy, AfterViewInit {
       description:
         'Accept USDC payments, run subscriptions, and pay out sellers with Zoneless. API reference, guides, and examples.',
       url: 'https://docs.zoneless.com',
-      image: 'https://zoneless.com/assets/images/screenshots/og.png',
+      image: 'https://docs.zoneless.com/assets/images/screenshots/og.png',
     });
   }
 

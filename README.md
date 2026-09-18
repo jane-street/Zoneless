@@ -1,6 +1,6 @@
 <p align="center">
   <a href="https://zoneless.com">
-    <img src="https://zoneless.com/assets/images/screenshots/og-payments.png" alt="Zoneless, an open-source payments platform" width="800" />
+    <img src="https://docs.zoneless.com/assets/images/screenshots/og-payments.png" alt="Zoneless, an open-source payments platform" width="800" />
   </a>
 </p>
 
@@ -36,7 +36,7 @@ Manage payments, customers, products, subscriptions, connected accounts, and bal
 
 <p align="center">
   <a href="https://docs.zoneless.com/platform-dashboard">
-    <img src="https://zoneless.com/assets/images/screenshots/hero-dashboard.webp" alt="Zoneless platform dashboard" width="700" />
+    <img src="https://docs.zoneless.com/assets/images/screenshots/hero-dashboard.webp" alt="Zoneless platform dashboard" width="700" />
   </a>
 </p>
 
@@ -46,7 +46,7 @@ Create products and payment links, then let customers pay with USDC through host
 
 <p align="center">
   <a href="https://docs.zoneless.com/payment-link-quickstart">
-    <img src="https://zoneless.com/assets/images/screenshots/checkout.webp" alt="Zoneless hosted checkout" width="700" />
+    <img src="https://docs.zoneless.com/assets/images/screenshots/checkout.webp" alt="Zoneless hosted checkout" width="700" />
   </a>
 </p>
 
@@ -56,7 +56,7 @@ Manage payments, subscription charges, payouts, refunds, and other balance activ
 
 <p align="center">
   <a href="https://docs.zoneless.com/platform-dashboard">
-    <img src="https://zoneless.com/assets/images/screenshots/transactions.webp" alt="Payment activity in the Zoneless dashboard" width="700" />
+    <img src="https://docs.zoneless.com/assets/images/screenshots/transactions.webp" alt="Payment activity in the Zoneless dashboard" width="700" />
   </a>
 </p>
 
@@ -66,7 +66,7 @@ Manage recurring payments, invoices, and subscription status.
 
 <p align="center">
   <a href="https://docs.zoneless.com/subscriptions">
-    <img src="https://zoneless.com/assets/images/screenshots/subscriptions.webp" alt="Subscriptions in the Zoneless dashboard" width="700" />
+    <img src="https://docs.zoneless.com/assets/images/screenshots/subscriptions.webp" alt="Subscriptions in the Zoneless dashboard" width="700" />
   </a>
 </p>
 
@@ -76,7 +76,7 @@ Onboard sellers to your marketplace via a hosted flow where they can enter their
 
 <p align="center">
   <a href="https://docs.zoneless.com/quickstart">
-    <img src="https://zoneless.com/assets/images/screenshots/onboard.webp" alt="Zoneless connected account onboarding" width="700" />
+    <img src="https://docs.zoneless.com/assets/images/screenshots/onboard.webp" alt="Zoneless connected account onboarding" width="700" />
   </a>
 </p>
 
@@ -86,7 +86,7 @@ Set verification rules and review sellers who need an identity check.
 
 <p align="center">
   <a href="https://docs.zoneless.com/identity-verification">
-    <img src="https://zoneless.com/assets/images/screenshots/kyc-hero.webp" alt="Seller identity verification in Zoneless" width="700" />
+    <img src="https://docs.zoneless.com/assets/images/screenshots/kyc-hero.webp" alt="Seller identity verification in Zoneless" width="700" />
   </a>
 </p>
 
@@ -96,7 +96,7 @@ Give each seller an Express-style dashboard for viewing earnings, payouts, and a
 
 <p align="center">
   <a href="https://zoneless.com/#live-demo">
-    <img src="https://zoneless.com/assets/images/screenshots/connect.webp" alt="Zoneless dashboard for connected accounts" width="700" />
+    <img src="https://docs.zoneless.com/assets/images/screenshots/connect.webp" alt="Zoneless dashboard for connected accounts" width="700" />
   </a>
 </p>
 
