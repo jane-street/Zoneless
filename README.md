@@ -180,6 +180,7 @@ npm run dev
 npx nx test api
 npx nx test web
 npx nx test docs
+npx nx test node-sdk
 ```
 
 ## Project structure
@@ -194,6 +195,8 @@ zoneless/
 ├── libs/
 │   ├── shared-types/     # Shared TypeScript interfaces
 │   └── shared-schemas/   # Shared Zod schemas
+├── sdks/
+│   └── node/             # @zoneless/node
 ├── docker-compose.yml    # Full-stack Docker setup
 └── nx.json
 ```

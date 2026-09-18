@@ -112,3 +112,6 @@ jobs:
 
       - name: Type check shared-types
         run: npx tsc --project libs/shared-types/tsconfig.lib.json --noEmit
+
+      - name: Type check Node SDK
+        run: npx tsc --project sdks/node/tsconfig.lib.json --noEmit

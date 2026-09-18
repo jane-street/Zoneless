@@ -71,9 +71,11 @@ Test mode uses simulated funds by default (`SETTLEMENT_RAIL=simulated`). To exer
 npx nx test api
 npx nx test web
 npx nx test docs
+npx nx test node-sdk
 npx nx lint api --fix
 npx nx lint web --fix
 npx nx lint docs --fix
+npx nx lint node-sdk --fix
 npm run format
 ```
 
@@ -83,7 +85,7 @@ CI also runs `npm run format:check` and `npx nx run-many --target=test --all`. R
 
 1. Branch from `main`. Name the branch whatever describes the change (`fix-payout-status`, `account-link-return-url`, and so on). A `feature/` prefix is not required.
 2. Keep the change small and focused on one goal.
-3. Add tests for the behaviour you changed. If the change affects a public API, dashboard flow, or self-hosting step, update the matching page in [`apps/docs`](apps/docs).
+3. Add tests for the behaviour you changed. If the change affects a public API, dashboard flow, or self-hosting step, update the matching page in [`apps/docs`](apps/docs). Keep [`sdks/node`](sdks/node) in the same PR when you change API types or request schemas.
 4. Follow the existing structure, naming, and formatting. Reuse styles from the styles folder rather than introducing new ones. Remove code that your change makes unused.
 5. Use comments only where the code cannot say it clearly.
 6. Fill out the PR template so reviewers know what changed and how you tested it.
