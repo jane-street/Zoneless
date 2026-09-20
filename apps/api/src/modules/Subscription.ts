@@ -46,6 +46,7 @@ import {
   UpdateSubscriptionInput,
   CreateSubscriptionItemSchema,
   UpdateSubscriptionItemSchema,
+  DeleteSubscriptionItemSchema,
 } from '@zoneless/shared-schemas';
 import { z } from 'zod';
 import {
@@ -777,7 +778,7 @@ export class SubscriptionModule {
   // Public Subscription Item Methods
   // ───────────────────────────────────────────────────────────────────────────
 
-  async CreateItem(
+  async CreateSubscriptionItem(
     platformAccountId: string,
     input: z.infer<typeof CreateSubscriptionItemSchema>
   ): Promise<SubscriptionItemType> {
@@ -787,7 +788,7 @@ export class SubscriptionModule {
       platformAccountId
     );
 
-    const item = await this.CreateSubscriptionItem(
+    const item = await this.InsertSubscriptionItem(
       platformAccountId,
       subscription.id,
       validatedInput,
@@ -806,7 +807,7 @@ export class SubscriptionModule {
     return item;
   }
 
-  async GetItem(
+  async GetSubscriptionItem(
     id: string,
     platformAccountId: string
   ): Promise<SubscriptionItemType | null> {
@@ -820,22 +821,21 @@ export class SubscriptionModule {
     return item;
   }
 
-  async UpdateItem(
+  async UpdateSubscriptionItem(
     id: string,
     input: z.infer<typeof UpdateSubscriptionItemSchema>,
     platformAccountId: string
   ): Promise<SubscriptionItemType> {
     const validatedInput = ValidateUpdate(UpdateSubscriptionItemSchema, input);
-    const existing = await this.GetItem(id, platformAccountId);
 
+    const existing = await this.GetSubscriptionItem(id, platformAccountId);
     if (!existing) {
       throw new AppError(
-        'Subscription item not found',
-        ERRORS.INVALID_REQUEST.status,
-        ERRORS.INVALID_REQUEST.type
+        ERRORS.SUBSCRIPTION_ITEM_NOT_FOUND.message,
+        ERRORS.SUBSCRIPTION_ITEM_NOT_FOUND.status,
+        ERRORS.SUBSCRIPTION_ITEM_NOT_FOUND.type
       );
     }
-
     const subscription = await this.RequireSubscription(
       existing.subscription,
       platformAccountId
@@ -848,7 +848,7 @@ export class SubscriptionModule {
       subscription.billing_cycle_anchor
     );
 
-    const updated = await this.GetItem(id, platformAccountId);
+    const updated = await this.GetSubscriptionItem(id, platformAccountId);
 
     if (this.eventService) {
       const updatedSubscription = await this.GetSubscription(subscription.id);
@@ -862,19 +862,17 @@ export class SubscriptionModule {
     return updated!;
   }
 
-  async DeleteItem(
+  async DeleteSubscriptionItem(
     id: string,
-    input: z.infer<
-      typeof import('@zoneless/shared-schemas').DeleteSubscriptionItemSchema
-    > = {},
+    input: z.infer<typeof DeleteSubscriptionItemSchema> = {},
     platformAccountId: string
   ) {
-    const existing = await this.GetItem(id, platformAccountId);
+    const existing = await this.GetSubscriptionItem(id, platformAccountId);
     if (!existing) {
       throw new AppError(
-        'Subscription item not found',
-        ERRORS.INVALID_REQUEST.status,
-        ERRORS.INVALID_REQUEST.type
+        ERRORS.SUBSCRIPTION_ITEM_NOT_FOUND.message,
+        ERRORS.SUBSCRIPTION_ITEM_NOT_FOUND.status,
+        ERRORS.SUBSCRIPTION_ITEM_NOT_FOUND.type
       );
     }
 
@@ -898,7 +896,7 @@ export class SubscriptionModule {
     return { id, object: 'subscription_item' as const, deleted: true };
   }
 
-  async ListItems(
+  async ListSubscriptionItems(
     options: ListOptions & { subscription: string }
   ): Promise<ListResult<SubscriptionItemType>> {
     const { subscription, ...listOptions } = options;
@@ -1290,7 +1288,7 @@ export class SubscriptionModule {
   ): Promise<SubscriptionItemType[]> {
     const items: SubscriptionItemType[] = [];
     for (const itemInput of itemsInput) {
-      const item = await this.CreateSubscriptionItem(
+      const item = await this.InsertSubscriptionItem(
         platformAccountId,
         subscriptionId,
         itemInput,
@@ -1301,7 +1299,7 @@ export class SubscriptionModule {
     return items;
   }
 
-  private async CreateSubscriptionItem(
+  private async InsertSubscriptionItem(
     platformAccountId: string,
     subscriptionId: string,
     itemInput: CreateItemInput | UpdateItemInput,
@@ -1380,7 +1378,7 @@ export class SubscriptionModule {
       }
 
       if (!itemInput.id) {
-        await this.CreateSubscriptionItem(
+        await this.InsertSubscriptionItem(
           platformAccountId,
           subscriptionId,
           itemInput,

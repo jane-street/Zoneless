@@ -136,7 +136,7 @@ describe('SubscriptionModule - Subscription Items', () => {
 
   describe('CreateItem', () => {
     it('should create an item and emit customer.subscription.updated', async () => {
-      const item = await module.CreateItem(PLATFORM, {
+      const item = await module.CreateSubscriptionItem(PLATFORM, {
         subscription: SUBSCRIPTION_ID,
         price: PRICE_ID,
         quantity: 2,
@@ -167,7 +167,7 @@ describe('SubscriptionModule - Subscription Items', () => {
         subscription: SUBSCRIPTION_ID,
       });
 
-      const item = await module.GetItem('si_123', PLATFORM);
+      const item = await module.GetSubscriptionItem('si_123', PLATFORM);
       expect(item).toBeDefined();
       expect(item?.id).toBe('si_123');
     });
@@ -180,7 +180,7 @@ describe('SubscriptionModule - Subscription Items', () => {
         subscription: SUBSCRIPTION_ID,
       });
 
-      const item = await module.GetItem('si_123', PLATFORM);
+      const item = await module.GetSubscriptionItem('si_123', PLATFORM);
       expect(item).toBeNull();
     });
   });
@@ -196,7 +196,7 @@ describe('SubscriptionModule - Subscription Items', () => {
         quantity: 1,
       });
 
-      const updated = await module.UpdateItem(
+      const updated = await module.UpdateSubscriptionItem(
         'si_123',
         { quantity: 5 },
         PLATFORM
@@ -215,7 +215,7 @@ describe('SubscriptionModule - Subscription Items', () => {
 
     it('should throw error if item does not exist', async () => {
       await expect(
-        module.UpdateItem('si_missing', { quantity: 5 }, PLATFORM)
+        module.UpdateSubscriptionItem('si_missing', { quantity: 5 }, PLATFORM)
       ).rejects.toThrow(AppError);
     });
   });
@@ -229,7 +229,11 @@ describe('SubscriptionModule - Subscription Items', () => {
         subscription: SUBSCRIPTION_ID,
       });
 
-      const result = await module.DeleteItem('si_123', {}, PLATFORM);
+      const result = await module.DeleteSubscriptionItem(
+        'si_123',
+        {},
+        PLATFORM
+      );
 
       expect(result.deleted).toBe(true);
       expect(store.has(StoreKey('SubscriptionItems', 'si_123'))).toBe(false);
@@ -253,7 +257,7 @@ describe('SubscriptionModule - Subscription Items', () => {
           url: '/v1/subscription_items',
         });
 
-      await module.ListItems({
+      await module.ListSubscriptionItems({
         account: PLATFORM,
         limit: 10,
         subscription: SUBSCRIPTION_ID,

@@ -76,16 +76,16 @@ async function GetOwnedSubscriptionItem(
   id: string,
   platformAccountId: string
 ): Promise<SubscriptionItem> {
-  const subscriptionItem = await subscriptionModule.GetItem(
+  const subscriptionItem = await subscriptionModule.GetSubscriptionItem(
     id,
     platformAccountId
   );
 
   if (!subscriptionItem) {
     throw new AppError(
-      'Subscription item not found',
-      ERRORS.INVALID_REQUEST.status,
-      ERRORS.INVALID_REQUEST.type
+      ERRORS.SUBSCRIPTION_ITEM_NOT_FOUND.message,
+      ERRORS.SUBSCRIPTION_ITEM_NOT_FOUND.status,
+      ERRORS.SUBSCRIPTION_ITEM_NOT_FOUND.type
     );
   }
 
@@ -108,7 +108,7 @@ router.post(
       fields: Object.keys(req.body),
     });
 
-    const subscriptionItem = await subscriptionModule.CreateItem(
+    const subscriptionItem = await subscriptionModule.CreateSubscriptionItem(
       platformAccountId,
       req.body
     );
@@ -138,7 +138,7 @@ router.post(
       fields: Object.keys(req.body),
     });
 
-    const updated = await subscriptionModule.UpdateItem(
+    const updated = await subscriptionModule.UpdateSubscriptionItem(
       id,
       req.body,
       platformAccountId
@@ -186,7 +186,7 @@ router.delete(
 
     Logger.info('Deleting Subscription Item', { subscriptionItemId: id });
 
-    const result = await subscriptionModule.DeleteItem(
+    const result = await subscriptionModule.DeleteSubscriptionItem(
       id,
       req.body,
       platformAccountId
@@ -228,7 +228,7 @@ router.get(
       );
     }
 
-    const result = await subscriptionModule.ListItems({
+    const result = await subscriptionModule.ListSubscriptionItems({
       account: platformAccountId,
       limit,
       startingAfter,
