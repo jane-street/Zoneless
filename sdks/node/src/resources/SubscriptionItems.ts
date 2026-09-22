@@ -4,13 +4,13 @@ import {
   SubscriptionItemDeleted,
   ListResponse,
 } from '@zoneless/shared-types';
-import {
+import type {
   CreateSubscriptionItemInput,
   ListSubscriptionItemsInput,
   RetrieveSubscriptionItemInput,
   UpdateSubscriptionItemInput,
   DeleteSubscriptionItemInput,
-} from '@zoneless/shared-schemas';
+} from '../generated/Inputs';
 
 /**
  * @see https://zoneless.com/docs/subscriptionitems

@@ -1711,6 +1711,48 @@ export type CreateSubscriptionInput = {
   expand?: string[] | undefined;
 };
 
+export type CreateSubscriptionItemInput = {
+  subscription: string;
+  billing_thresholds?: '' | { usage_gte: number } | undefined;
+  discounts?:
+    | {
+        coupon?: string | undefined;
+        discount?: string | undefined;
+        promotion_code?: string | undefined;
+      }[]
+    | undefined;
+  metadata?: Record<string, string> | undefined;
+  payment_behavior?:
+    | 'allow_incomplete'
+    | 'default_incomplete'
+    | 'error_if_incomplete'
+    | 'pending_if_incomplete'
+    | undefined;
+  price?: string | undefined;
+  price_data?:
+    | {
+        currency: string;
+        product: string;
+        recurring: {
+          interval: 'hour' | 'day' | 'week' | 'month' | 'year';
+          interval_count?: number | undefined;
+        };
+        tax_behavior?: 'inclusive' | 'exclusive' | 'unspecified' | undefined;
+        unit_amount?: number | undefined;
+        unit_amount_decimal?: string | undefined;
+      }
+    | undefined;
+  proration_behavior?:
+    | 'none'
+    | 'create_prorations'
+    | 'always_invoice'
+    | undefined;
+  proration_date?: number | undefined;
+  quantity?: number | undefined;
+  tax_rates?: string[] | undefined;
+  expand?: string[] | undefined;
+};
+
 export type CreateTopUpInput = {
   amount: number;
   currency: string;
@@ -1739,6 +1781,22 @@ export type CreateWebhookEndpointInput = {
   connect?: boolean | undefined;
   description?: string | undefined;
   metadata?: Record<string, string> | undefined;
+};
+
+export type DeleteSubscriptionItemInput = {
+  clear_usage?: boolean | undefined;
+  payment_behavior?:
+    | 'allow_incomplete'
+    | 'default_incomplete'
+    | 'error_if_incomplete'
+    | 'pending_if_incomplete'
+    | undefined;
+  proration_behavior?:
+    | 'none'
+    | 'create_prorations'
+    | 'always_invoice'
+    | undefined;
+  proration_date?: number | undefined;
 };
 
 export type ExpireCheckoutSessionInput = Record<string, never>;
@@ -2100,6 +2158,14 @@ export type ListProductsInput = {
   expand?: string[] | undefined;
 };
 
+export type ListSubscriptionItemsInput = {
+  subscription: string;
+  ending_before?: string | undefined;
+  limit?: number | undefined;
+  starting_after?: string | undefined;
+  expand?: string[] | undefined;
+};
+
 export type ListSubscriptionsInput = {
   automatic_tax?: { enabled: boolean } | undefined;
   collection_method?: 'charge_automatically' | 'send_invoice' | undefined;
@@ -2249,6 +2315,8 @@ export type RetrievePriceInput = { expand?: string[] | undefined };
 export type RetrieveProductInput = { expand?: string[] | undefined };
 
 export type RetrieveSubscriptionInput = { expand?: string[] | undefined };
+
+export type RetrieveSubscriptionItemInput = { expand?: string[] | undefined };
 
 export type RunBillingForPlatformInput = { batch_size?: number | undefined };
 
@@ -3415,6 +3483,49 @@ export type UpdateSubscriptionInput = {
         };
       }
     | undefined;
+  expand?: string[] | undefined;
+};
+
+export type UpdateSubscriptionItemInput = {
+  billing_thresholds?: '' | { usage_gte: number } | undefined;
+  discounts?:
+    | ''
+    | {
+        coupon?: string | undefined;
+        discount?: string | undefined;
+        promotion_code?: string | undefined;
+      }[]
+    | undefined;
+  metadata?: Record<string, string> | undefined;
+  off_session?: boolean | undefined;
+  payment_behavior?:
+    | 'allow_incomplete'
+    | 'default_incomplete'
+    | 'error_if_incomplete'
+    | 'pending_if_incomplete'
+    | undefined;
+  price?: string | undefined;
+  price_data?:
+    | {
+        currency: string;
+        product: string;
+        recurring: {
+          interval: 'hour' | 'day' | 'week' | 'month' | 'year';
+          interval_count?: number | undefined;
+        };
+        tax_behavior?: 'inclusive' | 'exclusive' | 'unspecified' | undefined;
+        unit_amount?: number | undefined;
+        unit_amount_decimal?: string | undefined;
+      }
+    | undefined;
+  proration_behavior?:
+    | 'none'
+    | 'create_prorations'
+    | 'always_invoice'
+    | undefined;
+  proration_date?: number | undefined;
+  quantity?: number | undefined;
+  tax_rates?: '' | string[] | undefined;
   expand?: string[] | undefined;
 };
 
