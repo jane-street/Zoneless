@@ -4,8 +4,16 @@ export const GET_STARTED_SECTION: DocSection = {
   id: 'get-started',
   title: 'Get started',
   children: [
-    { id: 'quickstart', title: 'Quickstart', children: [] },
-    { id: 'api-quickstart', title: 'API Quickstart', children: [] },
+    {
+      id: 'payment-link-quickstart',
+      title: 'Quickstart',
+      children: [],
+    },
+    {
+      id: 'checkout-api-quickstart',
+      title: 'API Quickstart',
+      children: [],
+    },
     { id: 'authentication', title: 'Authentication', children: [] },
     { id: 'migrate-from-stripe', title: 'Migrate from Stripe', children: [] },
     { id: 'platform-dashboard', title: 'Platform Dashboard', children: [] },
@@ -31,6 +39,8 @@ export const CONNECT_GUIDES_SECTION: DocSection = {
   id: 'connect-guides',
   title: 'Marketplaces',
   children: [
+    { id: 'quickstart', title: 'Payouts Quickstart', children: [] },
+    { id: 'api-quickstart', title: 'Payouts API Quickstart', children: [] },
     { id: 'connected-accounts', title: 'Connected Accounts', children: [] },
     {
       id: 'fund-platform-wallet',
@@ -40,23 +50,6 @@ export const CONNECT_GUIDES_SECTION: DocSection = {
     {
       id: 'identity-verification',
       title: 'Identity Verification (KYC)',
-      children: [],
-    },
-  ],
-};
-
-export const PAYMENTS_GUIDES_SECTION: DocSection = {
-  id: 'payments-guides',
-  title: 'Payments',
-  children: [
-    {
-      id: 'payment-link-quickstart',
-      title: 'Payment Links quickstart',
-      children: [],
-    },
-    {
-      id: 'checkout-api-quickstart',
-      title: 'Checkout API quickstart',
       children: [],
     },
   ],
@@ -97,7 +90,6 @@ export const PRIMARY_GUIDE_SECTIONS: DocSection[] = [
   CONNECT_GUIDES_SECTION,
   SELF_HOSTING_SECTION,
   DEVELOPMENT_SECTION,
-  PAYMENTS_GUIDES_SECTION,
 ];
 
 export const GUIDE_SECTIONS: DocSection[] = [

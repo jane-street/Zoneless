@@ -66,7 +66,7 @@ export class Docs implements OnInit, OnDestroy, AfterViewInit {
   readonly agentMarketplacePrompt = marketplaceAgentPrompt;
   readonly agentPaymentsPrompt = paymentsAgentPrompt;
 
-  activeSection = signal<string>('quickstart');
+  activeSection = signal<string>('payment-link-quickstart');
   activeSubSection = signal<string>('');
   expandedSections = signal<Set<string>>(
     new Set(docSections.map((section) => section.id))

@@ -3,7 +3,7 @@ import { NODE_INIT } from './shared';
 
 export const CHECKOUT_API_QUICKSTART_PAGE: DocPage = {
   id: 'checkout-api-quickstart',
-  title: 'Checkout API quickstart',
+  title: 'API Quickstart',
   description:
     'Accept USDC payments from your app with Checkout and the Zoneless Node.js SDK. This guide uses Zoneless Cloud in live mode.',
   sections: [

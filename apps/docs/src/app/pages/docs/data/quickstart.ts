@@ -2,7 +2,7 @@ import { DocPage } from './types';
 
 export const PAYMENT_LINK_QUICKSTART_PAGE: DocPage = {
   id: 'payment-link-quickstart',
-  title: 'Payment Links quickstart',
+  title: 'Quickstart',
   description: 'Accept your first stablecoin payment with no code.',
   sections: [
     {

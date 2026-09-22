@@ -2,7 +2,7 @@ import { DocPage } from './types';
 
 export const API_QUICKSTART_PAGE: DocPage = {
   id: 'api-quickstart',
-  title: 'API Quickstart',
+  title: 'Payouts API Quickstart',
   description:
     'Create a connected account, onboard a seller, and send their first USDC payout.',
   sections: [

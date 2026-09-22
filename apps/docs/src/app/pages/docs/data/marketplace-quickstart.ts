@@ -2,7 +2,7 @@ import { DocPage } from './types';
 
 export const QUICKSTART_PAGE: DocPage = {
   id: 'quickstart',
-  title: 'Quickstart',
+  title: 'Payouts Quickstart',
   description:
     'Onboard a seller and send their first USDC payout with no code.',
   sections: [

@@ -117,8 +117,8 @@ test('agent guides use a dedicated final sidebar section', () => {
   assert.deepEqual(
     getStarted?.children?.map((child) => child.id),
     [
-      'quickstart',
-      'api-quickstart',
+      'payment-link-quickstart',
+      'checkout-api-quickstart',
       'authentication',
       'migrate-from-stripe',
       'platform-dashboard',
