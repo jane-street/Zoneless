@@ -1,4 +1,4 @@
-import { Zoneless } from './index';
+import { Zoneless } from '../index';
 
 describe('Zoneless', () => {
   const originalFetch = global.fetch;

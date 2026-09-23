@@ -1,4 +1,4 @@
-import { HttpClient, ZonelessApiError } from './HttpClient';
+import { HttpClient, ZonelessApiError } from '../HttpClient';
 
 describe('HttpClient', () => {
   const originalFetch = global.fetch;

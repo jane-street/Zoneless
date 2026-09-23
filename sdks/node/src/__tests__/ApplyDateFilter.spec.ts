@@ -1,4 +1,4 @@
-import { ApplyDateFilter } from './ApplyDateFilter';
+import { ApplyDateFilter } from '../utils/ApplyDateFilter';
 
 describe('ApplyDateFilter', () => {
   it('writes Stripe-style range query params', () => {

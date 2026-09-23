@@ -1,5 +1,5 @@
 import crypto from 'node:crypto';
-import { Webhooks, WebhookSignatureVerificationError } from './Webhooks';
+import { Webhooks, WebhookSignatureVerificationError } from '../resources/Webhooks';
 
 function SignPayload(
   payload: string,

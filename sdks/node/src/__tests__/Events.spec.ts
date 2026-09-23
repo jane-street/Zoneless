@@ -1,4 +1,4 @@
-import { Events } from './Events';
+import { Events } from '../resources/Events';
 import { HttpClient } from '../HttpClient';
 
 describe('Events', () => {

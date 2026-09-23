@@ -1,4 +1,4 @@
-import { IdentityVerificationSessions } from './IdentityVerificationSessions';
+import { IdentityVerificationSessions } from '../resources/IdentityVerificationSessions';
 import { HttpClient } from '../HttpClient';
 
 describe('IdentityVerificationSessions', () => {
