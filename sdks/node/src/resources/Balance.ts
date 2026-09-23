@@ -5,10 +5,10 @@ import { Balance } from '@zoneless/shared-types';
 export type RetrieveBalanceOptions = RequestExtraOptions;
 
 /**
- * @see https://zoneless.com/docs/balance
+ * @see https://docs.zoneless.com/balance
  */
 export class BalanceResource extends BaseResource {
-  /** @see https://zoneless.com/docs/balance/retrieve */
+  /** @see https://docs.zoneless.com/balance/retrieve */
   async retrieve(options?: RequestExtraOptions): Promise<Balance> {
     return this.client.Get<Balance>('/balance', undefined, options);
   }

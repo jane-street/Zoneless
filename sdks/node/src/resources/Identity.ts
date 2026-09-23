@@ -2,7 +2,7 @@ import { HttpClient } from '../HttpClient';
 import { IdentityVerificationSessions } from './IdentityVerificationSessions';
 
 /**
- * @see https://zoneless.com/docs/identity/verification_sessions
+ * @see https://docs.zoneless.com/identity/verification_sessions
  */
 export class Identity {
   readonly verificationSessions: IdentityVerificationSessions;

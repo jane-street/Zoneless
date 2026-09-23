@@ -12,36 +12,36 @@ import type {
 } from '../generated/Inputs';
 
 /**
- * @see https://zoneless.com/docs/topups
+ * @see https://docs.zoneless.com/topups
  */
 export class TopUps extends BaseResource {
-  /** @see https://zoneless.com/docs/topups/create */
+  /** @see https://docs.zoneless.com/topups/create */
   async create(params: CreateTopUpInput): Promise<TopUp> {
     return this.client.Post<TopUp>('/topups', params);
   }
 
-  /** @see https://zoneless.com/docs/topups/retrieve */
+  /** @see https://docs.zoneless.com/topups/retrieve */
   async retrieve(id: string): Promise<TopUp> {
     return this.client.Get<TopUp>(`/topups/${id}`);
   }
 
-  /** @see https://zoneless.com/docs/topups/update */
+  /** @see https://docs.zoneless.com/topups/update */
   async update(id: string, params: UpdateTopUpInput): Promise<TopUp> {
     return this.client.Post<TopUp>(`/topups/${id}`, params);
   }
 
-  /** @see https://zoneless.com/docs/topups/list */
+  /** @see https://docs.zoneless.com/topups/list */
   async list(params: ListTopUpsInput = {}): Promise<ListResponse<TopUp>> {
     const query = this.BuildQuery(params);
     return this.client.Get<ListResponse<TopUp>>('/topups', query);
   }
 
-  /** @see https://zoneless.com/docs/topups/cancel */
+  /** @see https://docs.zoneless.com/topups/cancel */
   async cancel(id: string): Promise<TopUp> {
     return this.client.Post<TopUp>(`/topups/${id}/cancel`, {});
   }
 
-  /** @see https://zoneless.com/docs/topups/check-deposits */
+  /** @see https://docs.zoneless.com/topups/check-deposits */
   async checkDeposits(): Promise<CheckDepositsResponse> {
     return this.client.Post<CheckDepositsResponse>(
       '/topups/check-deposits',

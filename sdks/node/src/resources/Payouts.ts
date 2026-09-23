@@ -19,10 +19,10 @@ import type {
 } from '../generated/Inputs';
 
 /**
- * @see https://zoneless.com/docs/payouts
+ * @see https://docs.zoneless.com/payouts
  */
 export class Payouts extends BaseResource {
-  /** @see https://zoneless.com/docs/payouts/create */
+  /** @see https://docs.zoneless.com/payouts/create */
   async create(
     params: CreatePayoutInput,
     options?: RequestExtraOptions
@@ -30,12 +30,12 @@ export class Payouts extends BaseResource {
     return this.client.Post<Payout>('/payouts', params, options);
   }
 
-  /** @see https://zoneless.com/docs/payouts/retrieve */
+  /** @see https://docs.zoneless.com/payouts/retrieve */
   async retrieve(id: string, options?: RequestExtraOptions): Promise<Payout> {
     return this.client.Get<Payout>(`/payouts/${id}`, undefined, options);
   }
 
-  /** @see https://zoneless.com/docs/payouts/update */
+  /** @see https://docs.zoneless.com/payouts/update */
   async update(
     id: string,
     params: UpdatePayoutInput,
@@ -44,7 +44,7 @@ export class Payouts extends BaseResource {
     return this.client.Post<Payout>(`/payouts/${id}`, params, options);
   }
 
-  /** @see https://zoneless.com/docs/payouts/list */
+  /** @see https://docs.zoneless.com/payouts/list */
   async list(
     params: ListPayoutsInput = {},
     options?: RequestExtraOptions
@@ -53,7 +53,7 @@ export class Payouts extends BaseResource {
     return this.client.Get<ListResponse<Payout>>('/payouts', query, options);
   }
 
-  /** @see https://zoneless.com/docs/payouts/cancel */
+  /** @see https://docs.zoneless.com/payouts/cancel */
   async cancel(id: string, options?: RequestExtraOptions): Promise<Payout> {
     return this.client.Post<Payout>(`/payouts/${id}/cancel`, {}, options);
   }
@@ -74,7 +74,7 @@ export class Payouts extends BaseResource {
    * console.log(buildResult.unsigned_transaction); // Base64 transaction
    * ```
    *
-   * @see https://zoneless.com/docs/payouts/build
+   * @see https://docs.zoneless.com/payouts/build
    */
   async build(
     params: BuildPayoutsBatchInput,
@@ -104,7 +104,7 @@ export class Payouts extends BaseResource {
    * console.log(result.signature); // Solana transaction signature
    * ```
    *
-   * @see https://zoneless.com/docs/payouts/broadcast
+   * @see https://docs.zoneless.com/payouts/broadcast
    */
   async broadcast(
     params: BroadcastPayoutsBatchInput,
@@ -144,7 +144,7 @@ export class Payouts extends BaseResource {
    * }
    * ```
    *
-   * @see https://zoneless.com/docs/payouts/process-batch
+   * @see https://docs.zoneless.com/payouts/process-batch
    */
   async processBatch(
     secretKey: string,
@@ -226,7 +226,7 @@ export class Payouts extends BaseResource {
    * console.log(`Processed ${totalProcessed} payouts in ${results.length} batches`);
    * ```
    *
-   * @see https://zoneless.com/docs/payouts/process-all
+   * @see https://docs.zoneless.com/payouts/process-all
    */
   async processAll(
     secretKey: string,
@@ -278,7 +278,7 @@ export class Payouts extends BaseResource {
    * });
    * ```
    *
-   * @see https://zoneless.com/docs/payouts/sign
+   * @see https://docs.zoneless.com/payouts/sign
    */
   sign(unsignedTransaction: string, secretKey: string): string {
     return this.SignTransaction(unsignedTransaction, secretKey);

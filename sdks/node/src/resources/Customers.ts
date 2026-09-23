@@ -13,20 +13,20 @@ import type {
 } from '../generated/Inputs';
 
 /**
- * @see https://zoneless.com/docs/customers
+ * @see https://docs.zoneless.com/customers
  */
 export class Customers extends BaseResource {
-  /** @see https://zoneless.com/docs/customers/create */
+  /** @see https://docs.zoneless.com/customers/create */
   async create(params: CreateCustomerInput): Promise<Customer> {
     return this.client.Post<Customer>('/customers', params);
   }
 
-  /** @see https://zoneless.com/docs/customers/update */
+  /** @see https://docs.zoneless.com/customers/update */
   async update(id: string, params: UpdateCustomerInput): Promise<Customer> {
     return this.client.Post<Customer>(`/customers/${id}`, params);
   }
 
-  /** @see https://zoneless.com/docs/customers/retrieve */
+  /** @see https://docs.zoneless.com/customers/retrieve */
   async retrieve(
     id: string,
     params: RetrieveCustomerInput = {}
@@ -34,7 +34,7 @@ export class Customers extends BaseResource {
     return this.client.Get<Customer>(`/customers/${id}`, params);
   }
 
-  /** @see https://zoneless.com/docs/customers/list */
+  /** @see https://docs.zoneless.com/customers/list */
   async list(params: ListCustomersInput = {}): Promise<ListResponse<Customer>> {
     const query: ListQuery = {
       limit: params.limit,
@@ -46,7 +46,7 @@ export class Customers extends BaseResource {
     return this.client.Get<ListResponse<Customer>>(`/customers`, query);
   }
 
-  /** @see https://zoneless.com/docs/customers/delete */
+  /** @see https://docs.zoneless.com/customers/delete */
   async del(customerId: string): Promise<CustomerDeleted> {
     return this.client.Delete<CustomerDeleted>(`/customers/${customerId}`);
   }

@@ -13,15 +13,15 @@ import type {
 } from '../generated/Inputs';
 
 /**
- * @see https://zoneless.com/docs/subscriptionitems
+ * @see https://docs.zoneless.com/subscriptionitems
  */
 export class SubscriptionItems extends BaseResource {
-  /** @see https://zoneless.com/docs/subscriptionitems/create */
+  /** @see https://docs.zoneless.com/subscriptionitems/create */
   async create(params: CreateSubscriptionItemInput): Promise<SubscriptionItem> {
     return this.client.Post<SubscriptionItem>('/subscription_items', params);
   }
 
-  /** @see https://zoneless.com/docs/subscriptionitems/update */
+  /** @see https://docs.zoneless.com/subscriptionitems/update */
   async update(
     id: string,
     params: UpdateSubscriptionItemInput
@@ -32,7 +32,7 @@ export class SubscriptionItems extends BaseResource {
     );
   }
 
-  /** @see https://zoneless.com/docs/subscriptionitems/retrieve */
+  /** @see https://docs.zoneless.com/subscriptionitems/retrieve */
   async retrieve(
     id: string,
     params: RetrieveSubscriptionItemInput = {}
@@ -43,7 +43,7 @@ export class SubscriptionItems extends BaseResource {
     );
   }
 
-  /** @see https://zoneless.com/docs/subscriptionitems/list */
+  /** @see https://docs.zoneless.com/subscriptionitems/list */
   async list(
     params: ListSubscriptionItemsInput
   ): Promise<ListResponse<SubscriptionItem>> {
@@ -55,7 +55,7 @@ export class SubscriptionItems extends BaseResource {
 
   /**
    * Deletes a subscription item.
-   * @see https://zoneless.com/docs/subscriptionitems/delete
+   * @see https://docs.zoneless.com/subscriptionitems/delete
    */
   async del(
     id: string,

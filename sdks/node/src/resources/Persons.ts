@@ -8,10 +8,10 @@ import type {
 /**
  * Persons API resource.
  * Persons represent individuals associated with an account's legal entity.
- * @see https://zoneless.com/docs/persons
+ * @see https://docs.zoneless.com/persons
  */
 export class Persons extends BaseResource {
-  /** @see https://zoneless.com/docs/persons/create */
+  /** @see https://docs.zoneless.com/persons/create */
   async create(
     accountId: string,
     params: CreatePersonInput = {}
@@ -19,14 +19,14 @@ export class Persons extends BaseResource {
     return this.client.Post<Person>(`/accounts/${accountId}/persons`, params);
   }
 
-  /** @see https://zoneless.com/docs/persons/retrieve */
+  /** @see https://docs.zoneless.com/persons/retrieve */
   async retrieve(accountId: string, personId: string): Promise<Person> {
     return this.client.Get<Person>(
       `/accounts/${accountId}/persons/${personId}`
     );
   }
 
-  /** @see https://zoneless.com/docs/persons/update */
+  /** @see https://docs.zoneless.com/persons/update */
   async update(
     accountId: string,
     personId: string,
@@ -38,14 +38,14 @@ export class Persons extends BaseResource {
     );
   }
 
-  /** @see https://zoneless.com/docs/persons/delete */
+  /** @see https://docs.zoneless.com/persons/delete */
   async del(accountId: string, personId: string): Promise<PersonDeleted> {
     return this.client.Delete<PersonDeleted>(
       `/accounts/${accountId}/persons/${personId}`
     );
   }
 
-  /** @see https://zoneless.com/docs/persons/list */
+  /** @see https://docs.zoneless.com/persons/list */
   async list(
     accountId: string,
     params: ListPersonsInput = {}

@@ -15,15 +15,15 @@ import type {
 } from '../generated/Inputs';
 
 /**
- * @see https://zoneless.com/docs/payment_intents
+ * @see https://docs.zoneless.com/payment_intents
  */
 export class PaymentIntents extends BaseResource {
-  /** @see https://zoneless.com/docs/payment_intents/create */
+  /** @see https://docs.zoneless.com/payment_intents/create */
   async create(params: CreatePaymentIntentInput): Promise<PaymentIntent> {
     return this.client.Post<PaymentIntent>('/payment_intents', params);
   }
 
-  /** @see https://zoneless.com/docs/payment_intents/update */
+  /** @see https://docs.zoneless.com/payment_intents/update */
   async update(
     id: string,
     params: UpdatePaymentIntentInput
@@ -31,7 +31,7 @@ export class PaymentIntents extends BaseResource {
     return this.client.Post<PaymentIntent>(`/payment_intents/${id}`, params);
   }
 
-  /** @see https://zoneless.com/docs/payment_intents/retrieve */
+  /** @see https://docs.zoneless.com/payment_intents/retrieve */
   async retrieve(
     id: string,
     params: RetrievePaymentIntentInput = {}
@@ -39,7 +39,7 @@ export class PaymentIntents extends BaseResource {
     return this.client.Get<PaymentIntent>(`/payment_intents/${id}`, params);
   }
 
-  /** @see https://zoneless.com/docs/payment_intents/list */
+  /** @see https://docs.zoneless.com/payment_intents/list */
   async list(
     params: ListPaymentIntentsInput = {}
   ): Promise<ListResponse<PaymentIntent>> {
@@ -51,7 +51,7 @@ export class PaymentIntents extends BaseResource {
 
   /**
    * Lists amount_details line items for a PaymentIntent.
-   * @see https://zoneless.com/docs/payment_intents/amount_details_line_items
+   * @see https://docs.zoneless.com/payment_intents/amount_details_line_items
    */
   async listAmountDetailsLineItems(
     id: string,
@@ -65,7 +65,7 @@ export class PaymentIntents extends BaseResource {
 
   /**
    * Cancels a PaymentIntent.
-   * @see https://zoneless.com/docs/payment_intents/cancel
+   * @see https://docs.zoneless.com/payment_intents/cancel
    */
   async cancel(
     id: string,

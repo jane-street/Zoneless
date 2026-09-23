@@ -9,10 +9,10 @@ import type {
 } from '../generated/Inputs';
 
 /**
- * @see https://zoneless.com/docs/transfers
+ * @see https://docs.zoneless.com/transfers
  */
 export class Transfers extends BaseResource {
-  /** @see https://zoneless.com/docs/transfers/create */
+  /** @see https://docs.zoneless.com/transfers/create */
   async create(
     params: CreateTransferInput,
     options?: RequestExtraOptions
@@ -20,12 +20,12 @@ export class Transfers extends BaseResource {
     return this.client.Post<Transfer>('/transfers', params, options);
   }
 
-  /** @see https://zoneless.com/docs/transfers/retrieve */
+  /** @see https://docs.zoneless.com/transfers/retrieve */
   async retrieve(id: string, options?: RequestExtraOptions): Promise<Transfer> {
     return this.client.Get<Transfer>(`/transfers/${id}`, undefined, options);
   }
 
-  /** @see https://zoneless.com/docs/transfers/update */
+  /** @see https://docs.zoneless.com/transfers/update */
   async update(
     id: string,
     params: UpdateTransferInput,
@@ -34,7 +34,7 @@ export class Transfers extends BaseResource {
     return this.client.Post<Transfer>(`/transfers/${id}`, params, options);
   }
 
-  /** @see https://zoneless.com/docs/transfers/list */
+  /** @see https://docs.zoneless.com/transfers/list */
   async list(
     params: ListTransfersInput = {},
     options?: RequestExtraOptions

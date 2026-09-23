@@ -29,7 +29,7 @@ import { ApplyDateFilter } from '../utils';
 import { Persons } from './Persons';
 import { LoginLinks } from './LoginLinks';
 /**
- * @see https://zoneless.com/docs/accounts
+ * @see https://docs.zoneless.com/accounts
  */
 export class Accounts extends BaseResource {
   private readonly externalAccounts: ExternalAccounts;
@@ -43,7 +43,7 @@ export class Accounts extends BaseResource {
     this.loginLinks = new LoginLinks(client);
   }
 
-  /** @see https://zoneless.com/docs/accounts/create */
+  /** @see https://docs.zoneless.com/accounts/create */
   async create(
     params: CreateAccountInput = {},
     options?: RequestExtraOptions
@@ -51,17 +51,17 @@ export class Accounts extends BaseResource {
     return this.client.Post<Account>('/accounts', params, options);
   }
 
-  /** @see https://zoneless.com/docs/accounts/retrieve */
+  /** @see https://docs.zoneless.com/accounts/retrieve */
   async retrieve(id: string, options?: RequestExtraOptions): Promise<Account> {
     return this.client.Get<Account>(`/accounts/${id}`, undefined, options);
   }
 
-  /** @see https://zoneless.com/docs/accounts/retrieve */
+  /** @see https://docs.zoneless.com/accounts/retrieve */
   async retrieveMe(options?: RequestExtraOptions): Promise<Account> {
     return this.client.Get<Account>('/accounts/me', undefined, options);
   }
 
-  /** @see https://zoneless.com/docs/accounts/update */
+  /** @see https://docs.zoneless.com/accounts/update */
   async update(
     id: string,
     params: UpdateAccountInput,
@@ -70,7 +70,7 @@ export class Accounts extends BaseResource {
     return this.client.Post<Account>(`/accounts/${id}`, params, options);
   }
 
-  /** @see https://zoneless.com/docs/accounts/delete */
+  /** @see https://docs.zoneless.com/accounts/delete */
   async del(
     id: string,
     options?: RequestExtraOptions
@@ -82,7 +82,7 @@ export class Accounts extends BaseResource {
     );
   }
 
-  /** @see https://zoneless.com/docs/accounts/list */
+  /** @see https://docs.zoneless.com/accounts/list */
   async list(
     params: ListAccountsInput = {},
     options?: RequestExtraOptions
@@ -98,7 +98,7 @@ export class Accounts extends BaseResource {
     return this.client.Get<ListResponse<Account>>('/accounts', query, options);
   }
 
-  /** @see https://zoneless.com/docs/accounts/reject */
+  /** @see https://docs.zoneless.com/accounts/reject */
   async reject(
     id: string,
     params: RejectAccountInput,
@@ -111,7 +111,7 @@ export class Accounts extends BaseResource {
   // External Accounts (Wallets)
   // ============================================
 
-  /** @see https://zoneless.com/docs/external-wallets/create */
+  /** @see https://docs.zoneless.com/external-wallets/create */
   async createExternalAccount(
     accountId: string,
     params: CreateExternalWalletInput
@@ -119,7 +119,7 @@ export class Accounts extends BaseResource {
     return this.externalAccounts.create(accountId, params);
   }
 
-  /** @see https://zoneless.com/docs/external-wallets/retrieve */
+  /** @see https://docs.zoneless.com/external-wallets/retrieve */
   async retrieveExternalAccount(
     accountId: string,
     externalAccountId: string
@@ -127,7 +127,7 @@ export class Accounts extends BaseResource {
     return this.externalAccounts.retrieve(accountId, externalAccountId);
   }
 
-  /** @see https://zoneless.com/docs/external-wallets/update */
+  /** @see https://docs.zoneless.com/external-wallets/update */
   async updateExternalAccount(
     accountId: string,
     externalAccountId: string,
@@ -136,7 +136,7 @@ export class Accounts extends BaseResource {
     return this.externalAccounts.update(accountId, externalAccountId, params);
   }
 
-  /** @see https://zoneless.com/docs/external-wallets/delete */
+  /** @see https://docs.zoneless.com/external-wallets/delete */
   async deleteExternalAccount(
     accountId: string,
     externalAccountId: string
@@ -144,7 +144,7 @@ export class Accounts extends BaseResource {
     return this.externalAccounts.del(accountId, externalAccountId);
   }
 
-  /** @see https://zoneless.com/docs/external-wallets/list */
+  /** @see https://docs.zoneless.com/external-wallets/list */
   async listExternalAccounts(
     accountId: string,
     params: ListExternalWalletsInput = {}
@@ -156,7 +156,7 @@ export class Accounts extends BaseResource {
   // Persons
   // ============================================
 
-  /** @see https://zoneless.com/docs/persons/create */
+  /** @see https://docs.zoneless.com/persons/create */
   async createPerson(
     accountId: string,
     params: CreatePersonInput = {}
@@ -164,12 +164,12 @@ export class Accounts extends BaseResource {
     return this.persons.create(accountId, params);
   }
 
-  /** @see https://zoneless.com/docs/persons/retrieve */
+  /** @see https://docs.zoneless.com/persons/retrieve */
   async retrievePerson(accountId: string, personId: string): Promise<Person> {
     return this.persons.retrieve(accountId, personId);
   }
 
-  /** @see https://zoneless.com/docs/persons/update */
+  /** @see https://docs.zoneless.com/persons/update */
   async updatePerson(
     accountId: string,
     personId: string,
@@ -178,7 +178,7 @@ export class Accounts extends BaseResource {
     return this.persons.update(accountId, personId, params);
   }
 
-  /** @see https://zoneless.com/docs/persons/delete */
+  /** @see https://docs.zoneless.com/persons/delete */
   async deletePerson(
     accountId: string,
     personId: string
@@ -186,7 +186,7 @@ export class Accounts extends BaseResource {
     return this.persons.del(accountId, personId);
   }
 
-  /** @see https://zoneless.com/docs/persons/list */
+  /** @see https://docs.zoneless.com/persons/list */
   async listPersons(
     accountId: string,
     params: ListPersonsInput = {}
@@ -198,7 +198,7 @@ export class Accounts extends BaseResource {
   // Login Links
   // ============================================
 
-  /** @see https://zoneless.com/docs/login-links/create */
+  /** @see https://docs.zoneless.com/login-links/create */
   async createLoginLink(accountId: string): Promise<LoginLink> {
     return this.loginLinks.create(accountId);
   }

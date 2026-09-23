@@ -9,10 +9,10 @@ export interface BalanceTransactionRequestOptions {
 }
 
 /**
- * @see https://zoneless.com/docs/balance-transactions
+ * @see https://docs.zoneless.com/balance-transactions
  */
 export class BalanceTransactions extends BaseResource {
-  /** @see https://zoneless.com/docs/balance-transactions/retrieve */
+  /** @see https://docs.zoneless.com/balance-transactions/retrieve */
   async retrieve(
     id: string,
     options: BalanceTransactionRequestOptions = {}
@@ -25,7 +25,7 @@ export class BalanceTransactions extends BaseResource {
     );
   }
 
-  /** @see https://zoneless.com/docs/balance-transactions/list */
+  /** @see https://docs.zoneless.com/balance-transactions/list */
   async list(
     params: ListBalanceTransactionsInput = {},
     options: BalanceTransactionRequestOptions = {}

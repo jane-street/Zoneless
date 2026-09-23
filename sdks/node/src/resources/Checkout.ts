@@ -4,7 +4,7 @@ import { CheckoutSessions } from './CheckoutSessions';
 /**
  * Checkout API namespace.
  *
- * @see https://zoneless.com/docs/checkout/sessions
+ * @see https://docs.zoneless.com/checkout/sessions
  */
 export class Checkout {
   /** Checkout Sessions API resource */

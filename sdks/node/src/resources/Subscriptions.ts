@@ -12,15 +12,15 @@ import type {
 } from '../generated/Inputs';
 
 /**
- * @see https://zoneless.com/docs/subscriptions
+ * @see https://docs.zoneless.com/subscriptions
  */
 export class Subscriptions extends BaseResource {
-  /** @see https://zoneless.com/docs/subscriptions/create */
+  /** @see https://docs.zoneless.com/subscriptions/create */
   async create(params: CreateSubscriptionInput): Promise<Subscription> {
     return this.client.Post<Subscription>('/subscriptions', params);
   }
 
-  /** @see https://zoneless.com/docs/subscriptions/update */
+  /** @see https://docs.zoneless.com/subscriptions/update */
   async update(
     id: string,
     params: UpdateSubscriptionInput
@@ -28,7 +28,7 @@ export class Subscriptions extends BaseResource {
     return this.client.Post<Subscription>(`/subscriptions/${id}`, params);
   }
 
-  /** @see https://zoneless.com/docs/subscriptions/retrieve */
+  /** @see https://docs.zoneless.com/subscriptions/retrieve */
   async retrieve(
     id: string,
     params: RetrieveSubscriptionInput = {}
@@ -36,7 +36,7 @@ export class Subscriptions extends BaseResource {
     return this.client.Get<Subscription>(`/subscriptions/${id}`, params);
   }
 
-  /** @see https://zoneless.com/docs/subscriptions/list */
+  /** @see https://docs.zoneless.com/subscriptions/list */
   async list(
     params: ListSubscriptionsInput = {}
   ): Promise<ListResponse<Subscription>> {
@@ -48,7 +48,7 @@ export class Subscriptions extends BaseResource {
 
   /**
    * Cancels a customer's subscription immediately.
-   * @see https://zoneless.com/docs/subscriptions/cancel
+   * @see https://docs.zoneless.com/subscriptions/cancel
    */
   async cancel(
     id: string,
@@ -59,7 +59,7 @@ export class Subscriptions extends BaseResource {
 
   /**
    * Upgrades the `billing_mode` of an existing subscription to `flexible`.
-   * @see https://zoneless.com/docs/subscriptions/migrate
+   * @see https://docs.zoneless.com/subscriptions/migrate
    */
   async migrate(
     id: string,
@@ -73,7 +73,7 @@ export class Subscriptions extends BaseResource {
 
   /**
    * Resumes a paused subscription.
-   * @see https://zoneless.com/docs/subscriptions/resume
+   * @see https://docs.zoneless.com/subscriptions/resume
    */
   async resume(
     id: string,

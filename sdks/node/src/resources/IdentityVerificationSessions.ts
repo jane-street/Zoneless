@@ -11,7 +11,7 @@ import type {
 } from '../generated/Inputs';
 
 /**
- * @see https://zoneless.com/docs/identity/verification_sessions
+ * @see https://docs.zoneless.com/identity/verification_sessions
  */
 export class IdentityVerificationSessions extends BaseResource {
   async create(
